@@ -14,3 +14,4 @@ Next steps:
 - create sql db with relevant data (17-18 Jhd) from xml
 - set up basic flask framework with basic template to drop content into
 
+Maybe switch to minidom/elementbytagname instead of objectify?
