@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^poerelief(.*)$ /fcgi-bin/poerelief.fcgi/$1 [QSA,L]
