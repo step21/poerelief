@@ -23,7 +23,7 @@
    <publicationStmt>
     <publisher>
      <orgName>
-      Salomon Ludwig Steinheim-Institut 
+      Salomon Ludwig Steinheim-Institut
       <address>
        <addrLine>Edmund-Körner-Platz 2</addrLine>
        <addrLine>D-45127 Essen</addrLine>
@@ -36,7 +36,7 @@
      <licence>
       <ref target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons licence Attribution-BY 4.0</ref>
       <p>
-       All reuse or distribution of this work must contain somewhere a link back to the URL 
+       All reuse or distribution of this work must contain somewhere a link back to the URL
        <ref>http://www.steinheim-institut.de/cgi-bin/epidat?id=aha-46</ref>
       </p>
      </licence>
@@ -55,7 +55,7 @@
         <support>
          <p>
           <material>Stein</material>
-          Hochrechteckige, gesockelte Muschelkalkstele mit scharriertem, vorkragendem Rahmen und geschweiftem Flachbogenabschluss, darin vorne ein großer, reliefierter Davidstern. Darunter eine erhabene, hochrechteckige Schrifttafel. Die Inschriften sind zentriert. (Vgl. mit dem Grabmal der Gattin, 
+          Hochrechteckige, gesockelte Muschelkalkstele mit scharriertem, vorkragendem Rahmen und geschweiftem Flachbogenabschluss, darin vorne ein großer, reliefierter Davidstern. Darunter eine erhabene, hochrechteckige Schrifttafel. Die Inschriften sind zentriert. (Vgl. mit dem Grabmal der Gattin,
           <ref target="http://steinheim-institut.de/cgi-bin/epidat?id=aha-47-t">aha-47</ref>
           .)
          </p>
@@ -80,7 +80,7 @@
         <region>North Rhine-Westphalia</region>
        </country>
        <settlement type='city' key='tgn:7005987'>
-        Ahaus 
+        Ahaus
         <geogName>
          Jüdischer Friedhof
          <geo decls="#WGS">52.077701 7.004256</geo>
@@ -210,7 +210,7 @@
     im Jahr 687.
     <lb n='15'/>
     Seine Seele sei eingebunden in das Bündel des Lebens
-   </div>
+   </div>  
    <div type="commentary" subtype="Zeilenkommentar">
     <head>Zeilenkommentar</head>
     <p>Zl 6: Ijob 1,8; 2,3.</p>
