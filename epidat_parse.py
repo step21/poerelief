@@ -1,8 +1,11 @@
+import sys
 from lxml import etree
 from io import StringIO, BytesIO
 from loc import loc
 import xmltodict
 import untangle
+
+sys.setDefaultEncoding('utf-8')
 
 #from lxml import objectify
 
@@ -15,7 +18,7 @@ format = "teip5"
 # afaik records always start at 1
 id = 1
 # Fixed location for testing
-loc = "aha"#
+#loc = "aha"#
 
 
 class Record(object):
@@ -23,8 +26,35 @@ class Record(object):
     self.id = 0
     self.loc = ""
     self.url = ""
+    self.expr = ""
+    self.licence = ""
+    self.title = ""
+    self.urld = ""
+    self.date = ""
+    self.insc = ""
+    self.material = ""
+    self.condition = ""
+    self.decoration = ""
+    self.geoname = ""
+    self.geotype = ""
+    self.geocountry = ""
+    self.georegion = ""
+    self.geocoord = ""
+    self.images = ""
+    self.idd = ""
+    self.sex = ""
+    self.pname = ""
+    self.deathdate = ""
+    self.edition = ""
+    self.recto = ""
+    self.rueck = ""
+    self.translation = ""
+    self.comm1 = ""
+    self.comm2 = ""
+    self.comm3 = ""
+    self.bibliography = ""
 
-#This get a record from supplied id + loc
+#This gets a record from supplied id + loc
 
   def getRecord(self, loc, id):
     self.url = baseurl + "id=" + loc + s + str(id) + s + format
@@ -33,7 +63,9 @@ class Record(object):
     ddict = untangle.parse(self.url)
     return ddict
 
-  def pExpr(self, expr):
+  def pExpr(self, record, expr):
+    record[]
+
     pass
 
 #The following methods parse the xml for a specific value each
@@ -49,16 +81,20 @@ class Record(object):
     pass
 
   def pDate(self, record):
-    pass
+    return record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.date['notBefore']
 
   def pInsc(self, record):
     pass
 
-  def pMaterial(arg):
-    pass
+  def pMaterial(self, arg):
+    return record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support.p
+
+#physDEsc
+#r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support
+
 
   def pCondition(self, record):
-    pass
+    return record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition
 
   def pDecoration(self, record):
     pass
@@ -83,6 +119,7 @@ class Record(object):
     pass
 
   def pGetId(self, record):
+
     pass
 
   def pGetSex(self, record):
@@ -98,15 +135,16 @@ class Record(object):
     pass
 
   def pGetRecto(self, record):
-    pass
+    return record.TEI.text.body.div[0].div[0].ab.cdata
 
   def pGetRueck(self, record):
     pass
 
   def pGetTranslation(self, record):
-    pass
+    return record.TEI.text.body.div[1].div.ab.cdata
 
   def pGetCommentary1(self, record):
+    # r.TEI.text.body.div[3].p
     pass
 
   def pGetCommentary2(self, record):
@@ -116,4 +154,9 @@ class Record(object):
     pass
 
   def pGetBibliography(self, record):
+    pass
+
+  def harvest(self):
+    for loc in range(0, len(loc.loc)):
+      print loc.loc[loc]
     pass
