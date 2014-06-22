@@ -1,0 +1,17 @@
+var jsonLikeString = "name:red, type:blue, multiples:green, cat:brown";
+
+var jsObject = {};
+
+var stringWithoutSpaces = jsonLikeString.split(' ').join('');
+var splitStrings = stringWithoutSpaces .split(",");
+kvPairArray =[];
+
+for(var i in splitStrings){
+    if(splitStrings.hasOwnProperty(i)){
+        var kvPair = splitStrings[i];
+        var kvPairArray = kvPair.split(":");
+        jsObject[kvPairArray[0]] = kvPairArray[1];
+
+    }
+}
+alert(jsObject.cat);

@@ -1,0 +1,118 @@
+#The following methods parse the xml for a specific value each
+#This is all the values to get ... but: change to one method that populates all class attributes
+
+  def pLicence(self, record):
+    # status r.TEI.teiHeader.fileDesc.publicationStmt.availability['status']
+    #link r.TEI.teiHeader.fileDesc.publicationStmt.availability.licence.ref['target']
+    # licencename r.TEI.teiHeader.fileDesc.publicationStmt.availability.licence.ref.cdata
+    pass
+
+  def pTitle(self, record):
+    #r.TEI.teiHeader.fileDesc.titleStmt.title.cdata
+    pass
+
+  def pUrl(self, record):
+    #r.TEI.teiHeader.fileDesc.publicationStmt.idno[1].cdata
+    pass
+
+  def pDate(self, record):
+    return record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.date['notBefore']
+
+  def pInsc(self, record): #description of stone etc #TODO strip newlines
+    return record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support.p.cdata
+
+  def pMaterial(self, arg):
+    return r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support.p.material.cdata
+
+#physDEsc
+#r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support
+
+  def pCondition(self, record):
+    return r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition.p.cdata
+
+  def pDecoration(self, record):
+    r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.decoDesc.decoNote.cdata
+    r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.decoDesc.decoNote['type']
+    #is it always symbols or can it be many things?
+    pass
+
+  def pGeoName(self, record):
+    #r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.settlement.geogName.cdata
+    pass
+
+  def pGeoType(self, record):
+    #r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.settlement['type']
+    #return type, name
+    pass
+
+  def pTypeName(self, record):
+    r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.settlement.cdata
+    pass
+
+  def pGeoCountry(self, record):
+    r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.country.cdata
+    pass
+
+  def pGeoRegion(self, record):
+    r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.country.region.cdata
+    pass
+
+  def pGeoCoord(self, record):
+    r.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.settlement.geogName.geo.cdata
+    pass
+
+  def pGetImages(self, record):
+    r.TEI.facsimile.graphic[0] #[1] ... check with len or so how many ... url with r.TEI.facsimile.graphic[0]['url'] + add recto verso stuff etc
+    # add stuff about authors, etc r.TEI.teiHeader.encodingDesc.classDecl.taxonomy.category ff
+    pass
+
+  def pGetId(self, record):
+    #r.TEI.teiHeader.fileDesc.publicationStmt.idno[0].cdata
+    #person id - r.TEI.teiHeader.profileDesc.particDesc.listPerson.person['xml:id'] # Can there be more than one?
+    pass
+
+  def pGetSex(self, record):
+    #r.TEI.teiHeader.profileDesc.particDesc.listPerson.person['sex'] #1 is male
+    pass
+
+  def pGetPersName(self, record):
+    #r.TEI.teiHeader.profileDesc.particDesc.listPerson.person.persName.cdata #maybe as list with id if more than one??
+    pass
+
+  def pGetDeathDate(self, record):
+    #if r.TEI.teiHeader.profileDesc.particDesc.listPerson.person.event['type'] == "dateofdeath"
+    #r.TEI.teiHeader.profileDesc.particDesc.listPerson.person.event['when']
+    pass
+
+  def pGetEdition(self, record):
+    #r.TEI.text.body.div[0].head.cdata
+    pass
+
+  def pGetRecto(self, record):
+    return record.TEI.text.body.div[0].div[0].ab.cdata
+
+  def pGetRueck(self, record):
+    r.TEI.text.body.div[0].div[1].ab.cdata
+    #if cdata, why does it look like ascii or some escaped stuff in console?
+    pass
+
+  def pGetTranslation(self, record):
+    return record.TEI.text.body.div[1].div.ab.cdata
+
+#Zeilenkommentar
+  def pGetLineComm(self, record):
+    r.TEI.text.body.div[2].p # [0]... <head> bis Ende und dann cdata/bzw nur p als list
+    pass
+
+#Endkommentar - auch für mehrere ps anpassen
+  def pGetEndComm(self, record):
+    return record.TEI.text.body.div[3].p
+
+#Prosopographie
+  def pGetProso(self, record):
+    #r.TEI.text.body.div[4].p
+    pass
+
+  def pGetBibliography(self, record):
+    #r.TEI.text.body.div[5] # if list, for p in l ... cdata
+    pass
