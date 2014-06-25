@@ -16,7 +16,7 @@ version = "0.0.1"
 def page():
 	pg = ""
 	return render_template("index.html", pg=pg, sitename=sitename, pagetitle=pagetitle, version=version)
-
+mode
 @app.route('/demo')
 def demo():
 	ret = 'var jsonLikeString = "name:red, type:blue, multiples:green, cat:brown"'

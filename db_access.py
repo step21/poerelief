@@ -1,6 +1,8 @@
 # encoding=utf-8
+#DEPRECATED
 
-from sqlalchemy import *
+""" from sqlalchemy import *
+
 
 class DBC(object):
     def __init__(self):
@@ -66,3 +68,4 @@ class DBC(object):
       ins = """INSERT INTO tei_entries (""" + field + """) VALUES (?);"""
       res = conn.execute(ins, val)
       return res
+      """
