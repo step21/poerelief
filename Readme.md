@@ -1,9 +1,9 @@
-# 0.1.1
+# Poerelief 0.1.1
 - reorganization  into proper package
 - proper db access with sqlalchemy orm
 
 # Poerelief 0.1
-# Readme
+
 So far:
 - did some concept work/ideas
 - some wireframing
@@ -12,10 +12,7 @@ So far:
 - set up basic framework for flask
 
 Next steps:
-- parse xml into array or key value store in python
-- create list of all fixed location ids to use
-- create sql connection
-- create sql db with relevant data (17-18 Jhd) from xml
-- set up basic flask framework with basic template to drop content into
 
-Maybe switch to minidom/elementbytagname instead of objectify?
+- create sql db with relevant data (17-18 Jhd) from xml
+- creata json output in flask as tested
+- fix up js to display json as 'slides'
