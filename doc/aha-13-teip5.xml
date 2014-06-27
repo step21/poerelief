@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/8.18/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title xml:lang='de'>Grabmal für Elieser ben Josef Hakohen, gest. 1879-12-08, Jehuda, gest. 1879-12-09, Jüdischer Friedhof Ahaus</title>
+    <respStmt xml:lang="de">
+     <resp>herausgegeben vom</resp>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </respStmt>
+   </titleStmt>
+    <editionStmt>
+    <edition/>
+   </editionStmt>
+   <extent/>
+   <publicationStmt>
+    <publisher>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut 
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </publisher>
+    <idno>aha-13</idno>
+    <idno type="url">http://www.steinheim-institut.de/cgi-bin/epidat?id=aha-13</idno>
+    <availability xml:lang="en" status="free">
+     <licence>
+      <ref target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons licence Attribution-BY 4.0</ref>
+      <p>
+       All reuse or distribution of this work must contain somewhere a link back to the URL 
+       <ref>http://www.steinheim-institut.de/cgi-bin/epidat?id=aha-13</ref>
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+    <notesStmt>
+    <note/>
+   </notesStmt>
+   <sourceDesc>
+    <bibl>born digital</bibl>
+     <msDesc>
+     <msIdentifier/>
+     <physDesc>
+      <objectDesc>
+       <supportDesc>
+        <support>
+         <p>
+          <material>Stein</material>
+          Breite, hochrechteckige Sandsteinstele mit geradem Abschluss. Das verdoppelte Schriftfeld wird von vorgesetzten Säulen gerahmt, die einen Rundbogen tragen. Die erste Zeile folgt dem Rundbogen, darunter ist das Symbol aus einer erhabenen, rechteckigen Tafel herausgearbeitet. Zl 2 ist zentriert, die Einleitungsformeln in Zl 3 wurden jeweils mittig über die folgenden Eulogien gesetzt, die - jeweils rechtsbündig angebracht - durch eine senkrechte Linie voneinander getrennt sind. Die wiederum zentrierte Schlussformel wird durch deutlich größere Buchstaben hervorgehoben.
+         </p>
+        </support>
+        <condition>
+         <p>Der Grabstein ist gut erhalten.</p>
+        </condition>
+       </supportDesc>
+        <layoutDesc>
+        <layout/>
+       </layoutDesc>
+      </objectDesc>
+      <decoDesc>
+       <decoNote type='symbol'>Segnende Priesterhände</decoNote>
+      </decoDesc>
+     </physDesc>
+     <history>
+      <origin>
+       <date notBefore='1879-12-08'>1879-12-08</date>
+       <country type="ISO_3166" key="XA-DE-NW">
+        Germany
+        <region>North Rhine-Westphalia</region>
+       </country>
+       <settlement type='city' key='tgn:7005987'>
+        Ahaus 
+        <geogName>
+         Jüdischer Friedhof
+         <geo decls="#WGS">52.077701 7.004256</geo>
+        </geogName>
+       </settlement>
+      </origin>
+     </history>
+    </msDesc>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <p>Encoded according to the EpiDoc Guidelines, Schema Version 8.18</p>
+   <classDecl>
+    <taxonomy>
+     <category xml:id='foto1'>
+      <catDesc>Heinz Duttmann</catDesc>
+     </category>
+     <category xml:id='foto2'>
+      <catDesc>
+       <persName ref='http://d-nb.info/gnd/128472499' role='photographer'>Bert Sommer</persName>
+      </catDesc>
+     </category>
+    </taxonomy>
+   </classDecl>
+   <geoDecl xml:id="WGS" datum="WGS84">World Geodetic System</geoDecl>
+  </encodingDesc>
+  <profileDesc>
+   <particDesc>
+    <listPerson>
+     <person xml:id="aha-13-1" sex='1'>
+      <persName>Elieser ben Josef Hakohen</persName>
+       <event when='1879-12-08' type="dateofdeath">
+       <desc/>
+      </event>
+     </person>
+     <person xml:id="aha-13-2" sex='1'>
+      <persName>Jehuda</persName>
+       <event when='1879-12-09' type="dateofdeath">
+       <desc/>
+      </event>
+     </person>
+    </listPerson>
+   </particDesc>
+    <langUsage>
+    <!-- According to bcp47 http://tools.ietf.org/html/bcp47 (Language) and ISO15924 (writing System)-->
+    <language ident='he' usage='100'>Hebrew</language>
+   </langUsage>
+  </profileDesc>
+   <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <facsimile>
+  <graphic url='http://steinheim-institut.de/daten/picsaha/xl/aha0013.png'>
+    <desc>
+    <ref target='#foto1'/>
+    recto
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picsaha/xl/aha0013A.png'>
+    <desc>
+    <ref target='#foto1'/>
+    recto
+   </desc>
+  </graphic>
+ </facsimile>
+ <text>
+  <body>
+   <div type='edition'>
+    <head>Edition</head>
+     <ab>
+     <lb n='1'/>
+     ‎‏הנאהבים והנעימים בחייהם ובמותם לא נפרדו‏‎
+     <lb n='2'/>
+     ‎‏עוברי בעמק הבכא ראו‏‎
+     <lb n='3'/>
+     ‎‏פה // ופה‏‎
+     <lb n='4'/>
+     ‎‏אמלל פרח לא צץ ציץ // יפה נוף הדר הורו‏‎
+     <lb n='5'/>
+     ‎‏ידיד אבות ענף יפה // וחדות אמו דרך כל‏‎
+     <lb n='6'/>
+     ‎‏זנח עולמו רך בשנים // הארץ הלך אחר אחיו‏‎
+     <lb n='7'/>
+     ‎‏ה״ה אליעזר בן כ׳ יוסף // ולמחרתו יום ג׳ כ״ד כסלו‏‎
+     <lb n='8'/>
+     ‎‏הכהן נקטף בעודו // בא המות שנית בחלוני‏‎
+     <lb n='9'/>
+     ‎‏באבו לדאבון אבותיו // אבותיו המדכאים ויאמר‏‎
+     <lb n='10'/>
+     ‎‏ביום ב׳ כ״ג כסלו תר״מ לפ״ק // גם אחיו יהודה יעלה‏‎
+     <lb n='11'/>
+     ‎‏תנצב״ה‏‎
+    </ab>
+   </div>
+   <div type='translation'>
+    <head>Übersetzung</head>
+     <ab>
+     <lb n='1'/>
+     Die Geliebten und Wohlgefälligen, in ihrem Leben und in ihrem Tode waren sie nicht getrennt
+     <lb n='2'/>
+     Die ihr durchs Jammertal zieht, sehet,
+     <lb n='3'/>
+     hier // und hier
+     <lb n='4'/>
+     welkt die Blume, treibt keine Blüten, // schön von Angesicht, die Pracht seiner Eltern
+     <lb n='5'/>
+     Liebling seiner Ahnen, ein schöner Zweig, // und Freude seiner Mutter, den Weg alles
+     <lb n='6'/>
+     er verwarf seine Welt zart an Jahren, // Irdischen folgte er seinem Bruder,
+     <lb n='7'/>
+     es ist Elieser, Sohn des geehrten Josef // und am folgenden Tag, Tag 3, 24. Kislev
+     <lb n='8'/>
+     Hakohen, er wurde gepflückt noch // stieg der Tod erneut in die Fenster
+     <lb n='9'/>
+     in seiner Blüte zum Kummer seiner Eltern // seiner erschütterten Eltern, und sagte:
+     <lb n='10'/>
+     am Tag 2, 23. Kislev 640 der kleinen Zählung. // Auch sein Bruder Jehuda wird emporsteigen!
+     <lb n='11'/>
+     Ihre Seelen seien eingebunden in das Bündel des Lebens
+    </ab>
+   </div>
+   <div type='commentary' subtype='Stilmittel'>
+    <head>Stilmittel</head>
+    <p>
+     <label>Akrostichon</label>
+      ELIESeR (rechts) und JeHUDA (links) in Zln 4-6.
+    </p>
+   </div>
+   <div type="commentary" subtype="Zeilenkommentar">
+    <head>Zeilenkommentar</head>
+    <p>Zl 1: 2 Samuel 1,23; dem Klagelied Davids über König Saul und dessen Sohn Jonathan entlehnt.</p>
+    <p>Zl 2: Psalm 84,7; hier auch als Synonym für den Friedhof zu verstehen.</p>
+    <p>Rechts (Elieser):</p>
+    <p>Zl 4a: Vgl. Nachum 1,4.</p>
+    <p>Zl 4b: Vgl. Numeri 17,23.</p>
+    <p>Zl 5b: Vgl. Ezechiel 31,3.</p>
+    <p>Zl 8b-9a: Vgl. Ijob 8,12.</p>
+    <p>Zl 10b: Die Abkürzung "nach der kleinen Zählung" wurde in Ligatur ausgeführt.</p>
+    <p>Links (Jehuda):</p>
+    <p>Zl 4a: Psalm 48,3.</p>
+    <p>Zl 5b-6a: Josua 23,14.</p>
+    <p>Zl 8: Vgl. Jeremia 9,20.</p>
+    <p>Zl 9b-10: Vgl. Richter 1,2.</p>
+   </div>
+   <div type="commentary" subtype="Endkommentar">
+    <head>Endkommentar</head>
+    <p>Dieser einzige Doppelstein auf unserem Friedhof wurde einem Brüderpaar gesetzt, das an aufeinander folgenden Tagen starb. Überschrieben sind die Inschriften mit einem nicht selten in der Neuzeit auf solchen Doppelsteinen zu findenden Zitat aus dem Klagelied Davids über Saul und Jonathan, meist jedoch für Ehepaare. Einzigartig bleibt in Ahaus die direkte Anrede des Friedhofbesuchers. Während die Eulogie für den älteren Sohn Elieser (Gustav, geb. 19.5.1870) aus biblischen Anspielungen auf die Pflanzenwelt als Sinnbild für das zarte Alter des Kindes zusammengesetzt ist, hebt die Eulogie für den etwas jüngeren Jehuda (das ist Leopold, geb. 17.1.1874) die Erschütterung der Eltern über den Verlust ihres zweiten Sohnes hervor, der seinem Bruder in den frühen Tod folgte. Während das Bild des Todes, der durch das Fenster einsteigt, entsprechend des Jeremia-Zitates häufiger auf Grabsteinen von Kindern und Jugendlichen zu finden ist, bleibt der "sprechende Tod" doch eine große Ausnahme.</p>
+    <p>
+     Die Verbindung der Namen Jehuda und Leopold geht auf den biblischen Jakobssegen zurück: In Genesis 49,9 vergleicht Jakob seinen Sohn Jehuda mit einem Löwen. Daher stammt die häufig zu findende Gleichsetzung des Namens Jehuda mit dem hebräischen Arie ("Löwe") und dem deutschen Löb/Löw, hier schließlich in einer "modernisierten" Form Leopold. Der Synagogalname Elieser wurde in Ahaus häufig mit dem deutschen Namen Gumpert verbunden (siehe z.B. 
+     <ref target="http://steinheim-institut.de/cgi-bin/epidat?id=aha-12-t">aha-12</ref>
+     ), und Gumpert beginnt wiederum mit dem selben Anlaut wie der Name Gustav.
+    </p>
+   </div>
+   <div type="commentary" subtype="Prosopographie">
+    <head>Prosopographie</head>
+   </div>
+   <div type="bibliography">
+    <head>Bibliographie</head>
+    <p>to be done ...</p>
+   </div>
+  </body>
+ </text>
+</TEI>
