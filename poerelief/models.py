@@ -8,11 +8,12 @@ class Epidat(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   loc = db.Column(db.String(12), default=0)
   url = db.Column(db.String(256))
-  expr = db.Column(db.String(256))
+  #expr = db.Column(db.String(256))
   licence = db.Column(db.Text)
   title = db.Column(db.Text)
   urld = db.Column(db.String)
-  date = db.Column(db.Date)
+  #FIXME convert to date object
+  date = db.Column(db.String)
   insc = db.Column(db.Text)
   material = db.Column(db.String)
   condition = db.Column(db.String)
@@ -21,12 +22,13 @@ class Epidat(db.Model):
   geotype = db.Column(db.String)
   geocountry = db.Column(db.String)
   georegion = db.Column(db.String)
-  geocoord = db.Column(db.Float)
+  geocoord = db.Column(db.String(256))
   images = db.Column(db.Text)
   idd = db.Column(db.String)
   sex = db.Column(db.Integer)
   pname = db.Column(db.String(120))
-  deathdate = db.Column(db.Date)
+  #FIXME convert to date object
+  deathdate = db.Column(db.String)
   edition = db.Column(db.String(120))
   verso = db.Column(db.Text)
   recto = db.Column(db.Text)
@@ -38,9 +40,9 @@ class Epidat(db.Model):
 
 class Locs(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-  loc = db.Column(db.String(12), default=0)
+  loc = db.Column(db.String(12))
 
 class Urls(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-  loc = db.Column(db.String(12), default=0)
+  loc = db.Column(db.String(12))
   url = db.Column(db.String(256))
