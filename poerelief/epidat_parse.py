@@ -5,8 +5,10 @@ sys.setdefaultencoding('utf-8')
 #from lxml import etree
 #from io import StringIO, BytesIO
 from loc import loc
+from types import *
 #import xmltodict
 import untangle
+import datetime
 # Temporär JS code der abfragt  returns one json array  refreshes every so often‘’ or so
 
 #Frage an Thomas - Warum <p> tags in xml?? vorgesehen in epidat?
@@ -30,7 +32,7 @@ class Record(object):
     self.id = 0
     self.loc = ""
     self.url = ""
-    self.expr = ""
+    #self.expr = ""
     self.licence = ""
     self.title = ""
     self.urld = ""
@@ -53,7 +55,7 @@ class Record(object):
     self.verso = ""
     self.recto = ""
     self.translation = ""
-    self.linecomm = ""
+    self.linecomm = []
     self.endcomm = ""
     self.proso = ""
     self.bibliography = ""
@@ -70,20 +72,37 @@ class Record(object):
     self.licence = [record.TEI.teiHeader.fileDesc.publicationStmt.availability['status'], record.TEI.teiHeader.fileDesc.publicationStmt.availability.licence.ref.cdata, record.TEI.teiHeader.fileDesc.publicationStmt.availability.licence.ref['target']]
     self.title = record.TEI.teiHeader.fileDesc.titleStmt.title.cdata
     self.urld = record.TEI.teiHeader.fileDesc.publicationStmt.idno[1].cdata
-    self.date = record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.date['notBefore']
+    #date
+    try:
+      record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.date
+    except IndexError:
+      "IndexError was raised for date"
+      self.date = None
+    else:
+      self.date = record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.history.origin.date['notBefore']
+    #insc
     self.insc = record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support.p.cdata
+    #material
     self.material = record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.support.p.material.cdata
+    #condition
     try:
       record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition
     except IndexError:
       print "Index Error was raised for condition"
+      self.condition = None
     else:
-      self.condition = record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition.p.cdata
+      if type(record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition.p) is ListType:
+        self.condition = list(self.condition)
+        for p in record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition.p:
+          self.condition.append(p)
+      else:
+        self.condition = record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.objectDesc.supportDesc.condition.p.cdata
     #Decodescription #Decotype
     try:
       record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.decoDesc.decoNote
     except IndexError:
       print "Index Error was raised for decotype"
+      self.decoration = None
     else:
       self.decoration = [record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.decoDesc.decoNote.cdata, record.TEI.teiHeader.fileDesc.sourceDesc.msDesc.physDesc.decoDesc.decoNote['type']]
     #Geoname
@@ -99,6 +118,7 @@ class Record(object):
       record.TEI.facsimile.graphic
     except IndexError:
       print "IndexError was raised for graphic"
+      self.images = None
     else:
       self.images = record.TEI.facsimile.graphic[0]
     # add stuff about authors, etc r.TEI.teiHeader.encodingDesc.classDecl.taxonomy.category ff
@@ -108,24 +128,123 @@ class Record(object):
       record.TEI.teiHeader.profileDesc.particDesc
     except IndexError:
       print "IndexError was raised for particDesc + person + sex"
+      self.sex = None
     else:
-      self.sex = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person['sex'] #1 is male
+      if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
+        self.sex = list(self.condition)
+        for s in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
+          self.sex.append(s['sex'])
+      else:
+        self.sex = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person['sex'] #1 is male
     #person name
     try:
       record.TEI.teiHeader.profileDesc.particDesc
     except IndexError:
       print "Index Error was raised for particDesc + person + name"
+      self.pname = None
     else:
-      self.pname = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person.persName.cdata #maybe as list with id if more than one??
-    #self.deathdate = if r.TEI.teiHeader.profileDesc.particDesc.listPerson.person.event['type'] == "dateofdeath" #r.TEI.teiHeader.profileDesc.particDesc.listPerson.person.event['when']
+      if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
+        self.pname = list(self.pname)
+        for p in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
+          self.pname.append(p.persName.cdata)
+      else:
+        self.pname = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person.persName.cdata #maybe as list with id if more than one??
+    #deathdate
+    try:
+      record.TEI.teiHeader.profileDesc.particDesc.listPerson.person
+    except IndexError:
+      print "IndexError was raised for deathdate"
+    else:
+      if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
+        self.deathdate = list(self.deathdate)
+        for d in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
+          if d.event['type'] == "dateofdeath":
+            self.deathdate.append(d.event['when'])
+      else:
+        if record.TEI.teiHeader.profileDesc.particDesc.listPerson.person.event['type'] == "dateofdeath":
+          self.deathdate = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person.event['when']
+    #edition
     self.edition = record.TEI.text.body.div[0].head.cdata
-    self.verso = record.TEI.text.body.div[0].div[0].ab.cdata
-    self.recto = record.TEI.text.body.div[0].div[1].ab.cdata
-    self.translation = record.TEI.text.body.div[1].div.ab.cdata
-    self.linecomm = record.TEI.text.body.div[2].p # [0]... <head> bis Ende und dann cdata/bzw nur p als list
-    self.endcomm = record.TEI.text.body.div[3].p
-    self.proso = record.TEI.text.body.div[4].p
-    self.bibliography = record.TEI.text.body.div[5] # if list, for p in l ... cdata
+    #verso
+    try:
+      record.TEI.text.body.div[0].div
+    except IndexError:
+      print "IndexError was raised for verso"
+      self.verso = None
+    else:
+      self.verso = record.TEI.text.body.div[0].div[0].ab.cdata
+    #recto
+    try:
+      record.TEI.text.body.div[0].div
+    except IndexError:
+      print "IndexError was raised for recto"
+      self.recto = None
+    else:
+      self.recto = record.TEI.text.body.div[0].div[1].ab.cdata
+    #translation
+    try:
+      record.TEI.text.body.div[1].div
+    except IndexError:
+      print "IndexError was raised for translation"
+      self.translation = None
+    else:
+      try:
+        record.TEI.text.body.div[1].div.ab
+      except AttributeError:
+        print "IndexError was raised for translation-ab"
+        self.translation = record.TEI.text.body.div[1].div
+      else:
+        self.translation = record.TEI.text.body.div[1].div.ab.cdata
+    #linecomm
+    try:
+      record.TEI.text.body.div[2]
+    except IndexError:
+      print "Index Error was raised for linecomm"
+      self.linecomm = None
+    else:
+      try:
+        record.TEI.text.body.div[2].p
+      except IndexError:
+        print "IndexError was raised for linecomm p"
+        self.linecomm = record.TEI.text.body.div[2]
+      else:
+        # head bis ende? cdata anhängen? zzt mit <p> als list
+        for i in record.TEI.text.body.div[2].p:
+          if type(i) != NoneType:
+            self.linecomm.append(i.cdata)
+          else:
+            pass
+    #endcomm
+    try:
+      record.TEI.text.body.div[3]
+    except IndexError:
+      print "IndexError was raised for endcomm"
+      self.endcomm = None
+    else:
+      #self.endcomm = record.TEI.text.body.div[3].p
+      try:
+        record.TEI.text.body.div[3].p
+      except IndexError:
+        print "IndexError was raised for part of endcomm"
+        self.endcomm = record.TEI.text.body.div
+      else:
+        self.endcomm = record.TEI.text.body.div[3].p
+    #proso
+    try:
+      record.TEI.text.body.div[4]
+    except IndexError:
+      print "IndexError was raised for proso"
+      self.proso = None
+    else:
+      self.proso = record.TEI.text.body.div[4].p
+    #bibliography
+    try:
+      record.TEI.text.body.div[5]
+    except IndexError:
+      print "IndexError was raised for bibliography"
+      self.bibliography = None
+    else:
+      self.bibliography = record.TEI.text.body.div[5] # if list, for p in l ... cdata
     return 0
 
 # format data as json
