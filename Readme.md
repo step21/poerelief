@@ -1,15 +1,9 @@
-# Poerelief 0.1.1
+# Readme.md
+# Poerelief 0.1.1 - הקלה פיוטית
 - reorganization  into proper package
 - proper db access with sqlalchemy orm
 
-# Poerelief 0.1
-
-So far:
-- did some concept work/ideas
-- some wireframing
-- added concept images and other related imagery
-- Tested how/if accessing xml at the institute works
-- set up basic framework for flask
+# Poerelief 0.1 - הקלה פיוטית
 
 Next steps:
 
