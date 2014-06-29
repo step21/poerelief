@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/8.18/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title xml:lang='de'>Grabmal für Sarche ∞ Meir (Sofie Weil), gest. 1906-10-16, Jüdischer Friedhof Ansbach</title>
+    <respStmt xml:lang="de">
+     <resp>herausgegeben vom</resp>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </respStmt>
+   </titleStmt>
+    <editionStmt>
+    <edition/>
+   </editionStmt>
+   <extent/>
+   <publicationStmt>
+    <publisher>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut 
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </publisher>
+    <idno>ans-6</idno>
+    <idno type="url">http://www.steinheim-institut.de/cgi-bin/epidat?id=ans-6</idno>
+    <availability xml:lang="en" status="free">
+     <licence>
+      <ref target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons licence Attribution-BY 4.0</ref>
+      <p>
+       All reuse or distribution of this work must contain somewhere a link back to the URL 
+       <ref>http://www.steinheim-institut.de/cgi-bin/epidat?id=ans-6</ref>
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+    <notesStmt>
+    <note/>
+   </notesStmt>
+   <sourceDesc>
+    <bibl>born digital</bibl>
+     <msDesc>
+     <msIdentifier/>
+     <physDesc>
+      <objectDesc>
+       <supportDesc>
+        <support>
+         <p>
+          <material>Stein</material>
+          Schmalhohe, sich leicht nach oben verjüngende Stele mit pyramidalem Abschluß und schmaler Sockelzone auf Postament. Die Inschriften sind zentriert, der Name in der deutschen Inschrift ist durch größere Buchstaben hervorgehoben. Vgl. auch das Grabmal des Gatten. Das Grabmal trägt die historische Grabsteinnummer 6.
+         </p>
+        </support>
+        <condition>
+         <p>Gut erhalten.</p>
+        </condition>
+       </supportDesc>
+        <layoutDesc>
+        <layout/>
+       </layoutDesc>
+      </objectDesc>
+     </physDesc>
+     <history>
+      <origin>
+       <date notBefore='1906-10-16'>1906-10-16</date>
+       <country type="ISO_3166" key="XA-DE-BY">
+        Germany
+        <region>Bavaria</region>
+       </country>
+       <settlement type='city' key='tgn:7004459'>
+        Ansbach 
+        <geogName>
+         Jüdischer Friedhof
+         <geo decls="#WGS">49.311285 10.570473</geo>
+        </geogName>
+       </settlement>
+      </origin>
+     </history>
+    </msDesc>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <p>Encoded according to the EpiDoc Guidelines, Schema Version 8.18</p>
+   <classDecl>
+    <taxonomy>
+     <category xml:id='foto1'>
+      <catDesc>
+       <persName ref='http://d-nb.info/gnd/128472499' role='photographer'>Bert Sommer</persName>
+      </catDesc>
+     </category>
+    </taxonomy>
+   </classDecl>
+   <geoDecl xml:id="WGS" datum="WGS84">World Geodetic System</geoDecl>
+  </encodingDesc>
+  <profileDesc>
+   <particDesc>
+    <listPerson>
+     <person xml:id="ans-6-1" sex='2'>
+      <persName>Sarche ∞ Meir (Sofie Weil)</persName>
+       <event when='1906-10-16' type="dateofdeath">
+       <desc/>
+      </event>
+     </person>
+    </listPerson>
+   </particDesc>
+    <langUsage>
+    <!-- According to bcp47 http://tools.ietf.org/html/bcp47 (Language) and ISO15924 (writing System)-->
+    <language ident='he' usage='63'>Hebrew</language>
+    <language ident='de' usage='36'>German</language>
+   </langUsage>
+  </profileDesc>
+   <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <facsimile>
+  <graphic url='http://steinheim-institut.de/daten/picsans/xl/0006_061016CTX0109hb.jpg'>
+    <desc>
+    <ref target='#foto1'/>
+    recto
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picsans/xl/0006r070909EPS7777hb.jpg'>
+    <desc>
+    <ref target='#foto1'/>
+    verso
+   </desc>
+  </graphic>
+ </facsimile>
+ <text>
+  <body>
+   <div type='edition'>
+    <head>Edition</head>
+     <ab>
+     <lb n='1'/>
+     ‎‏פ״ט‏‎
+     <lb n='2'/>
+     ‎‏א״ח מרת שרכה אלמנת‏‎
+     <lb n='3'/>
+     ‎‏כ׳ פו״מ מאיר למשפח׳ ווייל‏‎
+     <lb n='4'/>
+     ‎‏עלתה למר׳ ביום ג׳ כ״ז תשרי‏‎
+     <lb n='5'/>
+     ‎‏תרס״ז לפ״ק ותקבר יום ה׳ בו‏‎
+     <lb n='6'/>
+     Hier ruht
+     <lb n='7'/>
+     Frau Sofie Weil
+     <lb n='8'/>
+     geb. 5. Juni 1835,
+     <lb n='9'/>
+     gest. 16. Oktober 1906.
+     <lb n='10'/>
+     ‎‏תנצב״ה‏‎
+    </ab>
+   </div>
+   <div type='translation'>
+    <head>Übersetzung</head>
+     <ab>
+     <lb n='1'/>
+     Hier ist geborgen
+     <lb n='2'/>
+     die ›tüchtige Gattin‹, Frau Sarche, Witwe des
+     <lb n='3'/>
+     geehrten Vorstehers und Leiters Meir aus der Familie Weil,
+     <lb n='4'/>
+     sie ›stieg auf zur Höhe‹ am Tag 3, 27. Tischri
+     <lb n='5'/>
+     667 der kleinen Zählung, und wurde begraben am Tag 5 desselben.
+     <lb n='10'/>
+     Ihre Seele sei eingebunden in das Bündel des Lebens
+    </ab>
+   </div>
+   <div type="commentary" subtype="Zitate">
+    <head>Zitate</head>
+    <p>Zl 2: Spr 12,4; 31,10</p>
+    <p>Zl 4: vgl. Ps 68,19</p>
+   </div>
+   <div type="commentary" subtype="Endkommentar">
+    <head>Endkommentar</head>
+    <p>Das Grabmal für Sofie Weil wurde dem ihres 1897 gestorbenen Gatten, des Vorstehers Mayer Weil, sehr ähnlich gestaltet, die für sie verfaßten Inschriften sind jedoch deutlich kürzer und schlichter und vor allem die deutsche Inschrift beschränkt sich auf die nötigsten Angaben.</p>
+   </div>
+   <div type="commentary" subtype="Prosopographie">
+    <head>Prosopographie</head>
+   </div>
+   <div type="bibliography">
+    <head>Bibliographie</head>
+    <p>to be done ...</p>
+   </div>
+  </body>
+ </text>
+</TEI>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/8.18/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title xml:lang='de'>Grabmal für Jaakow ben Mosche Levi Mln, gest. 1427, Jüdischer Friedhof Worms</title>
+    <respStmt xml:lang="de">
+     <resp>herausgegeben vom</resp>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </respStmt>
+   </titleStmt>
+    <editionStmt>
+    <edition/>
+   </editionStmt>
+   <extent/>
+   <publicationStmt>
+    <publisher>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut 
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </publisher>
+    <idno>wrm-1253</idno>
+    <idno type="url">http://www.steinheim-institut.de/cgi-bin/epidat?id=wrm-1253</idno>
+    <availability xml:lang="en" status="free">
+     <licence>
+      <ref target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons licence Attribution-BY 4.0</ref>
+      <p>
+       All reuse or distribution of this work must contain somewhere a link back to the URL 
+       <ref>http://www.steinheim-institut.de/cgi-bin/epidat?id=wrm-1253</ref>
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+    <notesStmt>
+    <note/>
+   </notesStmt>
+   <sourceDesc>
+    <bibl>born digital</bibl>
+     <msDesc>
+     <msIdentifier/>
+     <physDesc>
+      <objectDesc>
+       <supportDesc>
+        <support>
+         <p>
+          <material>Stein</material>
+          <dimensions>
+           <dim>94 x 102,5 x 16 cm</dim>
+          </dimensions>
+          Unterer Teil einer Stele, rechteckige Grundform, der obere Abschluss fehlt. Sockelbereich mit bruchrauer Oberfläche, abgesetzt durch eine horizontale Ritzlinie (Spitznut). Eingetieftes Schriftfeld. Das rahmende Profil besteht aus einem einfachen Falz. Seitlich und unten umlaufender Rand.
+         </p>
+        </support>
+       </supportDesc>
+        <layoutDesc>
+        <layout/>
+       </layoutDesc>
+      </objectDesc>
+     </physDesc>
+     <history>
+      <origin>
+       <date notBefore='1427'>1427</date>
+       <country type="ISO_3166" key="XA-DE-RP">
+        Germany
+        <region>Rhineland-Palatinate</region>
+       </country>
+       <settlement type='city' key='tgn:7005108'>
+        Worms 
+        <geogName>
+         Jüdischer Friedhof
+         <geo decls="#WGS">49.629442 8.356283</geo>
+        </geogName>
+       </settlement>
+      </origin>
+     </history>
+    </msDesc>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <p>Encoded according to the EpiDoc Guidelines, Schema Version 8.18</p>
+   <classDecl>
+    <taxonomy>
+     <category xml:id='foto1'>
+      <catDesc>
+       <persName ref='http://d-nb.info/gnd/128472499' role='photographer'>
+        Bert Sommer, 
+        <orgName ref="http://d-nb.info/gnd/212562-6">Steinheim-Institut</orgName>
+       </persName>
+      </catDesc>
+     </category>
+     <category xml:id='foto4'>
+      <catDesc>S. Fuchs [IEK, Heidelberg]</catDesc>
+     </category>
+     <category xml:id='foto5'>
+      <catDesc>Gawlik</catDesc>
+     </category>
+     <category xml:id='foto7'>
+      <catDesc> </catDesc>
+     </category>
+     <category xml:id='foto2'>
+      <catDesc>W.E. Keil [IEK, Heidelberg]</catDesc>
+     </category>
+     <category xml:id='foto3'>
+      <catDesc>S. Fuchs [IEK, Heidelberg]</catDesc>
+     </category>
+     <category xml:id='foto6'>
+      <catDesc>Laura Augustin</catDesc>
+     </category>
+     <category xml:id='foto8'>
+      <catDesc>IWR, Heidelberg</catDesc>
+     </category>
+    </taxonomy>
+   </classDecl>
+   <geoDecl xml:id="WGS" datum="WGS84">World Geodetic System</geoDecl>
+  </encodingDesc>
+  <profileDesc>
+   <particDesc>
+    <listPerson>
+     <person xml:id="wrm-1253-1" sex='1'>
+      <persName>Jaakow ben Mosche Levi Mln</persName>
+       <event when='1427' type="dateofdeath">
+       <desc/>
+      </event>
+     </person>
+    </listPerson>
+   </particDesc>
+    <langUsage>
+    <!-- According to bcp47 http://tools.ietf.org/html/bcp47 (Language) and ISO15924 (writing System)-->
+    <language ident='he' usage='100'>Hebrew</language>
+   </langUsage>
+  </profileDesc>
+   <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <facsimile>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/bs/1253WA_0108290217.jpg'>
+    <desc>
+    <ref target='#foto1'/>
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/lda/0022_MI09115i03b.png'>
+    <desc>
+    <ref target='#foto7'/>
+    B_3848/26
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/ieg3/1253a.png'>
+    <desc>
+    <ref target='#foto4'/>
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/ieg3/1253b.png'>
+    <desc>
+    <ref target='#foto4'/>
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/ieg3/1253c.png'>
+    <desc>
+    <ref target='#foto4'/>
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/ieg3/1253d.png'>
+    <desc>
+    <ref target='#foto4'/>
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/ieg3/1253e.png'>
+    <desc>
+    <ref target='#foto4'/>
+   </desc>
+  </graphic>
+  <graphic url='http://steinheim-institut.de/daten/picswrm/xl/ieg3/1253f.png'>
+    <desc>
+    <ref target='#foto4'/>
+   </desc>
+  </graphic>
+ </facsimile>
+ <text>
+  <body>
+   <div type='edition'>
+    <head>Edition</head>
+     <ab>
+     <lb n='1'/>
+     ‎‏[מ...׃ ...׃ ...׃ ..נה‏‎
+     <lb n='2'/>
+     ‎‏ש...׃ ...׃ ...׃ ..נה‏‎
+     <lb n='3'/>
+     ‎‏ה...׃ ...׃ ...׃ ..נה‏‎
+     <lb n='4'/>
+     ‎‏ב...׃ ...׃ ...׃ ..נה]‏‎
+     <lb n='5'/>
+     ‎‏נפש תמה׃ כי השלימה׃ ..מה׃ ..נה‏‎
+     <lb n='6'/>
+     ‎‏ותיק נאמן׃ שפה נטמן׃ ..מן׃ ..נה‏‎
+     <lb n='7'/>
+     ‎‏היה בור סיד׃ שאין מפסיד׃ צדיק חסיד׃ ..נה‏‎
+     <lb n='8'/>
+     ‎‏ללמוד ללמד׃ דברי חמד׃ ... חמד׃ טוב בכונה‏‎
+     <lb n='9'/>
+     ‎‏וירח קדר׃ בליל נעדר׃ פרי הדר׃ ברוב בינה‏‎
+     <lb n='10'/>
+     ‎‏יהי נשמתו׃ אשר אתו׃ בניחותא׃ בטוב מלונה‏‎
+     <lb n='11'/>
+     ‎‏גדול הדור מרנא ורבנא יעקב בן מה״ר‏‎
+     <lb n='12'/>
+     ‎‏משה ס״ל זצ״ל שנפטר בליל מוצאי שבת‏‎
+     <lb n='13'/>
+     ‎‏ונקבר ביום א׳ כ״ב אלול קפ״ז ל׳ לאלף‏‎
+     <lb n='14'/>
+     ‎‏הששי תנצב״ה ע״ש עמודי גולה בגן עדן‏‎
+     <lb n='15'/>
+     ‎‏אמן אמן אמן סלה‏‎
+     <lb n='16'/>
+     ‎‏ ‏‎
+     <lb n='17'/>
+    </ab>
+   </div>
+   <div type='translation'>
+    <head>Übersetzung</head>
+     <ab>
+     <lb n='1'/>
+     [...
+     <supplied reason='subaudible'>JaakowMosche Levi Mln</supplied>
+     <lb n='2'/>
+     ...
+     <lb n='3'/>
+     ...
+     <lb n='4'/>
+     ...]
+     <lb n='5'/>
+     Als er die untadelige Seele aufgab ...
+     <lb n='6'/>
+     Der verlässlich Erfahrene, hier ist er verborgen, ... Dort ...
+     <lb n='7'/>
+     Eine gekälkte Zisterne war er, aus der nichts verlorenging, gerecht und fromm, ...
+     <lb n='8'/>
+     Zu lernen und zu lehren Worte der Lieblichkeit, ... der Lieblichkeit, gut in ...
+     <lb n='9'/>
+     Und der Mond verfinsterte sich, nächtens verschwand er, eine köstliche Frucht, voll Verstandeskraft.
+     <lb n='10'/>
+     Es sei seine Seele, welche mit ihm ist in Lieblichkeit, im Guten ihrer Wohnstatt.
+     <lb n='11'/>
+     Ein Großer seiner Generation, unser Lehrer und Meister Jaakow, der Sohn unseres Lehrers des Meisters
+     <lb n='12'/>
+     Mosche, Oberer der Leviten, das Andenken des Gerechten (sei) zum Segen, welcher verschied in der Nacht des Schabbatausgangs
+     <lb n='13'/>
+     und begraben wurde am Tag 1, 22. Elul, 187 der Zählung im sechsten
+     <lb n='14'/>
+     Jahrtausend. Es sei seine Seele eingebunden in das Bündel des Lebens mit den übrigen Säulen des Exils im Garten Eden.
+     <lb n='15'/>
+     Amen, amen, amen, Sela. 
+    </ab>
+   </div>
+   <div type="commentary" subtype="Zeilenkommentar">
+    <head>Zeilenkommentar</head>
+    <p>Zunächst hat Lewysohn, dann D. Kaufmann den Stein gelesen.</p>
+    <p>Letzterer hat einige Korrekturen und interessante Ergänzungen</p>
+    <p>hinsichtlich des stark beschädigten Steins vorgenommen. So hat</p>
+    <p>er zunächst anhand von Ausmessungen und Vergleichen mit anderen</p>
+    <p>Grabmalen geschlossen, dass dem Stein nach oben hin vier Zeilen</p>
+    <p>fehlen. Von dieser Erkenntnis ausgehend und im Vergleich mit</p>
+    <p>dem Grastein, den der Maharil seiner zwei Jahre vor ihm verstor-</p>
+    <p>benen Frau setzte, ist es Kaufmann gelungen, das vollständige</p>
+    <p>Akrostichon in den ersten zehn Zeilen (von denen noch sechs</p>
+    <p>vorhanden sind) zu ermitteln: Es bringt den Namen seines Vaters</p>
+    <p>und seines Sohnes Molin (= "Klein-Mose"). So ergeben die ersten</p>
+    <p>zehn Zeilen das Akrostichon: ‎‏משה בנו הלוי‏‎</p>
+    <p>Diese zehn Zeilen sind nach Kaufmann vierteilig aufgebaut -</p>
+    <p>die einzelnen zumeist Zweiwortgruppen (4 Silben) sind durch</p>
+    <p>semikolonartige Zeichen (hier Doppelpunkte) markiert - wobei die</p>
+    <p>ersten drei sich reimen und der letzte jeweils auf den Endreim</p>
+    <p>-nah schließt.</p>
+    <p>Datum: gest. in der Nacht des Schabbatausgangs, begr. Tag 1,</p>
+    <p>22. Elul 5187 = begr. am Sonntag, 14. September 1427</p>
+    <p>(R&amp;R: Nr. 374 u. 1076/ L'sohn Nr. 28)</p>
+    <p></p>
+   </div>
+   <div type="commentary" subtype="Prosopographie">
+    <head>Prosopographie</head>
+   </div>
+   <div type="bibliography">
+    <head>Bibliographie</head>
+    <p>to be done ...</p>
+   </div>
+  </body>
+ </text>
+</TEI>

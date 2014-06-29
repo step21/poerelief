@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/8.18/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title xml:lang='de'>Grabmal für Schlomo Salman ben Meir Aurich, Jüdischer Friedhof Altena</title>
+    <respStmt xml:lang="de">
+     <resp>herausgegeben vom</resp>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </respStmt>
+   </titleStmt>
+    <editionStmt>
+    <edition/>
+   </editionStmt>
+   <extent/>
+   <publicationStmt>
+    <publisher>
+     <orgName ref="http://d-nb.info/gnd/212562-6">
+      Salomon Ludwig Steinheim-Institut 
+      <address>
+       <addrLine>Edmund-Körner-Platz 2</addrLine>
+       <addrLine>D-45127 Essen</addrLine>
+      </address>
+     </orgName>
+    </publisher>
+    <idno>alt-4</idno>
+    <idno type="url">http://www.steinheim-institut.de/cgi-bin/epidat?id=alt-4</idno>
+    <availability xml:lang="en" status="free">
+     <licence>
+      <ref target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons licence Attribution-BY 4.0</ref>
+      <p>
+       All reuse or distribution of this work must contain somewhere a link back to the URL 
+       <ref>http://www.steinheim-institut.de/cgi-bin/epidat?id=alt-4</ref>
+      </p>
+     </licence>
+    </availability>
+   </publicationStmt>
+    <notesStmt>
+    <note/>
+   </notesStmt>
+   <sourceDesc>
+    <bibl>born digital</bibl>
+     <msDesc>
+     <msIdentifier/>
+     <physDesc>
+      <objectDesc>
+       <supportDesc>
+        <support>
+         <p>
+          <material>Stein</material>
+          Stele mit leicht eingezogenem Rundbogenabschluss mit einem kleinen Halbkreis auf dem Scheitel.
+         </p>
+        </support>
+        <condition>
+         <p>
+          <date>2012</date>
+           Ein Teil des Schriftfelds im Giebel ist abgeplatzt. Das Grabmal wurde neu einzementiert, so dass die letzten Zeilen der Inschrift (mit dem Sterbedatum) nicht mehr zu lesen sind.
+         </p>
+        </condition>
+       </supportDesc>
+        <layoutDesc>
+        <layout/>
+       </layoutDesc>
+      </objectDesc>
+      <handDesc>
+       <handNote>Schrift vertieft</handNote>
+      </handDesc>
+     </physDesc>
+     <history>
+      <origin>
+       <country type="ISO_3166" key="XA-DE-NW">
+        Germany
+        <region>North Rhine-Westphalia</region>
+       </country>
+       <settlement type='city' key='tgn:7006098'>
+        Altena 
+        <geogName>
+         Jüdischer Friedhof
+         <geo decls="#WGS">51.304016 7.671876</geo>
+        </geogName>
+       </settlement>
+      </origin>
+     </history>
+    </msDesc>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <p>Encoded according to the EpiDoc Guidelines, Schema Version 8.18</p>
+   <classDecl>
+    <taxonomy>
+     <category xml:id='foto2'>
+      <catDesc>Nathanja Hüttenmeister</catDesc>
+     </category>
+     <category xml:id='foto1'>
+      <catDesc>Jürgen Wagner, Altena</catDesc>
+     </category>
+    </taxonomy>
+   </classDecl>
+   <geoDecl xml:id="WGS" datum="WGS84">World Geodetic System</geoDecl>
+  </encodingDesc>
+  <profileDesc>
+   <particDesc>
+    <listPerson>
+     <person xml:id="alt-4-1" sex='1'>
+      <persName>Schlomo Salman ben Meir Aurich</persName>
+     </person>
+    </listPerson>
+   </particDesc>
+    <langUsage>
+    <!-- According to bcp47 http://tools.ietf.org/html/bcp47 (Language) and ISO15924 (writing System)-->
+    <language ident='he' usage='98'>Hebrew</language>
+    <language ident='de' usage='1'>German</language>
+   </langUsage>
+  </profileDesc>
+   <revisionDesc>
+   <change/>
+  </revisionDesc>
+ </teiHeader>
+ <facsimile>
+  <graphic url='http://steinheim-institut.de/daten/picsalt/xl/0004_alt.png'>
+    <desc>
+    <ref target='#foto1'/>
+    recto
+   </desc>
+  </graphic>
+ </facsimile>
+ <text>
+  <body>
+   <div type='edition'>
+    <head>Edition</head>
+     <ab>
+     <lb n='1'/>
+     ‎‏וישכב שלמה עם אבותיו ויקבר פה‏‎
+     <lb n='2'/>
+     ‎‏בנ״ה‏‎
+     <lb n='3'/>
+     ‎‏שלמה את ביתו לעולמים‏‎
+     <lb n='4'/>
+     ‎‏לשלום בואו קראו ממרומים‏‎
+     <lb n='5'/>
+     ‎‏מלא ימים ושנים בנעימים‏‎
+     <lb n='6'/>
+     ‎‏הלך את ד׳ והיה תמים‏‎
+     <lb n='7'/>
+     ‎‏ה״ה הישיש והזקן היקר כ׳ שלמה‏‎
+     <lb n='8'/>
+     ‎‏זלמן בן האלוף הראש והקצין‏‎
+     <lb n='9'/>
+     ‎‏פ״ו ושתדלן המדינה כהר״ר‏‎
+     <lb n='10'/>
+     ‎‏מאיר אויעריך ז״ל נפטר ונקבר‏‎
+     <lb n='11'/>
+     ‎‏בשם טוב והלך לעולם החיים‏‎
+     <lb n='12'/>
+     ‎‏ביום‏‎ [...]‏‎
+     <lb n='13'/>
+     ‎‏[־־־]‏‎
+    </ab>
+   </div>
+   <div type='translation'>
+    <head>Übersetzung</head>
+     <ab>
+     <lb n='1'/>
+     ›Und Schlomo legte sich zu seinen Vätern und wurde begraben‹ allhier
+     <lb n='2'/>
+     ...
+     <lb n='3'/>
+     Schlomo {verließ} sein Haus für alle Ewigkeit,
+     <lb n='4'/>
+     zu friedvollem Kommen rief man (ihn) von Droben,
+     <lb n='5'/>
+     er erfüllte seine Tage und Jahre in Annehmlichkeit,
+     <lb n='6'/>
+     er ging seines Weges und war lauter,
+     <lb n='7'/>
+     es ist der Hochbetagte und Alte, der Teure, der geehrte Schlomo
+     <lb n='8'/>
+     Salman, Sohn des Vornehmen, des Hauptes und des Einflußreichen,
+     <lb n='9'/>
+     des Vorstehers und Leiters und Fürsprechers der Landjudenschaft, des geehrten Meisters, Herrn
+     <lb n='10'/>
+     Meir Aurich, sein Andenken zum Segen, verschieden und begraben
+     <lb n='11'/>
+     ›mit gutem Namen‹ und er ging in die Welt des Lebens
+     <lb n='12'/>
+     am Tag ...
+     <lb n='13'/>
+     [---]
+    </ab>
+   </div>
+   <div type="commentary" subtype="Zitate">
+    <head>Zitate</head>
+    <p>Zl 1: 1Kön 11,43</p>
+    <p>Zl 11: bBer 17a</p>
+   </div>
+   <div type='commentary' subtype='Stilmittel'>
+    <head>Stilmittel</head>
+    <p>
+     <label>Reim</label>
+      auf -mim in Zln 3-6
+    </p>
+    <p>
+     <label>Akrostichon</label>
+      in Zeilen 3-6: ‎‏שלמה‏‎ Schlomo
+    </p>
+   </div>
+   <div type="commentary" subtype="Zeilenkommentar">
+    <head>Zeilenkommentar</head>
+    <p>Zl 10: Mit Aurich, etwa "Auerich" oder "Auerik" geschrieben, ist vermutlich das ostfriesische Aurich gemeint, in dem seit spätestens Mitte des 17. Jahrhunderts eine jüdische Gemeinde existierte.</p>
+   </div>
+   <div type="commentary" subtype="Prosopographie">
+    <head>Prosopographie</head>
+    <p>Könnte es sich um Salomon Meyer Calmers handeln (Akte A 782)???</p>
+   </div>
+   <div type="bibliography">
+    <head>Bibliographie</head>
+    <p>to be done ...</p>
+   </div>
+  </body>
+ </text>
+</TEI>
