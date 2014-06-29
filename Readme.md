@@ -1,9 +1,9 @@
 # Readme.md
-# Poerelief 0.1.1 - הקלה פיוטית
+# Poerelief 0.1.1
 - reorganization  into proper package
 - proper db access with sqlalchemy orm
 
-# Poerelief 0.1 - הקלה פיוטית
+# Poerelief 0.1
 
 Next steps:
 
