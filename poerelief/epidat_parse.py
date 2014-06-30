@@ -215,30 +215,52 @@ class Record(object):
         try:
           record.TEI.teiHeader.profileDesc.particDesc
         except IndexError:
-          print "IndexError was raised for particDesc + person + sex"
+          print "IndexError was raised for particDesc"
           self.sex = None
         else:
-          if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
-            self.sex = list(self.sex)
-            for s in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
-              self.sex.append(s['sex'])
-            print "List was added for sex"
+          try:
+            record.TEI.teiHeader.profileDesc.particDesc.listPerson
+          except IndexError:
+            print "IndexError was raised by listperson"
+            self.sex = None
           else:
-            self.sex = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person['sex'] #1 is male
-            print "String was added for sex"
+            try:
+              record.TEI.teiHeader.profileDEsc.particDesc.listPerson.person
+            except IndexError:
+              print "IndexError was raised by person"
+            else:
+              if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
+                self.sex = list(self.sex)
+                for s in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
+                  self.sex.append(s['sex'])
+                  print "List was added for sex"
+              else:
+                self.sex = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person['sex'] #1 is male
+                print "String was added for sex"
         #person name
         try:
           record.TEI.teiHeader.profileDesc.particDesc
         except IndexError:
-          print "Index Error was raised for particDesc + person + name"
+          print "Index Error was raised for particDesc"
           self.pname = None
         else:
-          if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
-            self.pname = list(self.pname)
-            for p in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
-              self.pname.append(p.persName.cdata)
+          try:
+            record.TEI.teiHeader.profileDesc.particDesc.listPerson
+          except IndexError:
+            print "IndexError was raised by listperson"
+            self.sex = None
           else:
-            self.pname = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person.persName.cdata #maybe as list with id if more than one??
+            try:
+              record.TEI.teiHeader.profileDEsc.particDesc.listPerson.person
+            except IndexError:
+              print "IndexError was raised by person"
+            else:
+              if type(record.TEI.teiHeader.profileDesc.particDesc.listPerson.person) is ListType:
+                self.pname = list(self.pname)
+                for p in record.TEI.teiHeader.profileDesc.particDesc.listPerson.person:
+                  self.pname.append(p.persName.cdata)
+              else:
+                self.pname = record.TEI.teiHeader.profileDesc.particDesc.listPerson.person.persName.cdata #maybe as list with id if more than one??
         #deathdate
         try:
           record.TEI.teiHeader.profileDesc.particDesc.listPerson.person

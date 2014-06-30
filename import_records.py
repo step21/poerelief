@@ -59,10 +59,10 @@ for u in q:
     d = r.pEvalRecord(r.getRecord(u.url))
     if d == 0:
       print "Record parsed successfully"
-      #s = models.Epidat(loc=r.loc, url=r.url, licence=unicode(str(r.licence)), title=r.title, urld=r.urld, date=unicode(str(r.date)), insc=r.insc, material=r.material, condition=unicode(str(r.condition)), decoration=unicode(r.decoration), geoname=r.geoname, geotype=r.geotype, geocountry=r.geocountry, georegion=r.georegion, geocoord=r.geocoord, images=unicode(str(r.images)), idd=r.idd, sex=unicode(str(r.sex)), pname=unicode(str(r.pname)), deathdate=unicode(str(r.deathdate)), edition=unicode(r.edition), verso=unicode(r.verso), recto=unicode(r.recto), translation=unicode(r.translation), linecomm=unicode(str(r.linecomm)), endcomm=unicode(r.endcomm), proso=unicode(r.proso), bibliography=unicode(r.bibliography))
-      #db.session.add(s)
+      s = models.Epidat(loc=r.loc, url=r.url, licence=unicode(str(r.licence)), title=r.title, urld=r.urld, date=unicode(str(r.date)), insc=r.insc, material=r.material, condition=unicode(str(r.condition)), decoration=unicode(r.decoration), geoname=r.geoname, geotype=r.geotype, geocountry=r.geocountry, georegion=r.georegion, geocoord=r.geocoord, images=unicode(str(r.images)), idd=r.idd, sex=unicode(str(r.sex)), pname=unicode(str(r.pname)), deathdate=unicode(str(r.deathdate)), edition=unicode(r.edition), verso=unicode(r.verso), recto=unicode(r.recto), translation=unicode(r.translation), linecomm=unicode(str(r.linecomm)), endcomm=unicode(r.endcomm), proso=unicode(r.proso), bibliography=unicode(r.bibliography))
+      db.session.add(s)
       try:
-        #db.session.commit()
+        db.session.commit()
         print "New record added"
         i += 1
       except SAXParseException:
