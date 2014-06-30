@@ -1,9 +1,15 @@
 # Readme.md
-# Poerelief 0.1.1
+
+* Poerelief 0.1.2
+- first databasedump https://mega.co.nz/#!hk0k1JgD!ZgSU4J29qm_uM0r0jNk_lDNSV66E1ClTBnB30YXn10w
+- improved parsing code
+- better structure and basics for ajax-y access
+
+* Poerelief 0.1.1
 - reorganization  into proper package
 - proper db access with sqlalchemy orm
 
-# Poerelief 0.1
+* Poerelief 0.1
 
 Next steps:
 
