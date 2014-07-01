@@ -18,11 +18,11 @@
 
 	<!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/base.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/skeleton.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/layout.css') }}">
-	<link href='http://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
-
+	<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/app.css') }}">
+	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="{{ url_for('static', filename='javascripts/app.js') }}"></script>
+	
+	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -36,26 +36,15 @@
 {% endblock %}
 </head>
 <body>
-
 	<div class="container">
-		{% block sidebar %}<div class="three columns sidebar">
-		<nav>
-			<h3 id="logo"  style="margin-top: 40px">{{ sitenamed }} {{ sitenameh }}</h3>
-			<h5>{{ version }}</h5>
-			<hr />
-			<li>
-			<ul><a>About</a></ul>
-			<!-- <ul><a href="/add/">Add</a></ul>
-			<ul><a href="/list/">Doclist</a></ul> -->
-			</li>
-			</nav>
-		</div>{% endblock %}
-
-
-		<div class="nine columns offset-by-one content"  style="margin-top: 40px">
-		{% block header %}{% endblock %}
-{% block content %}
-	{% endblock %}
+		<header>
+			<h1>{{ sitename }} | {{ sitenameh }}</h1>
+		</header>
+		<div class="separator"></div>
+		<div class="content">
+			{% block header %}{% endblock %}
+			{% block content %}
+			{% endblock %}
 		</div>
 
 	</div><!-- container -->
