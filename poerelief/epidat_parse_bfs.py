@@ -98,13 +98,13 @@ class Record(object):
     #translation
     self.data.update('translation', bfs.find_all("div", type="translation"))
     #linecomm
-    self.data.update('linecomm', bfs.find_all("div", subtype="Zeilenkommentar")
+    self.data.update('linecomm', bfs.find_all("div", subtype="Zeilenkommentar"))
     #endcomm
-    self.data.update('endcomm', bff.find_all("div", subtype="Endkommentar")
+    self.data.update('endcomm', bff.find_all("div", subtype="Endkommentar"))
     #proso
-    self.data.update('proso', bfs.find_all("div", subtype="Prosopographie")
+    self.data.update('proso', bfs.find_all("div", subtype="Prosopographie"))
     #bibliography
-    self.data.update('bibliography', bfs.find_all("div", type="bibliography")
+    self.data.update('bibliography', bfs.find_all("div", type="bibliography"))
     return 0
 
 # format data as json
