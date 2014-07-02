@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # encoding=utf-8
 import sys
-from poerelief import db, models, epidat_parse
-import untangle
+from poerelief import db, models, epidat_parse_bfs
+#mport untangle
 from xml.sax._exceptions import SAXParseException
 
 for x in sys.argv:
@@ -16,7 +16,7 @@ i = 1
 
 q = models.Urls.query.all()
 for u in q:
-  r = epidat_parse.Record()
+  r = epidat_parse_bfs.Record()
   print "Record Number", i
   print "New Record initiated"
   print "Now processing ", u.url
