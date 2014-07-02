@@ -1,6 +1,5 @@
 # encoding=utf-8
-from poerelief import db, models, epidat_parse, harvest
-from loc import loc
+from poerelief import db, models, epidat_parse, harvest, loc
 #import untangle
 #from xml.sax._exceptions import SAXParseException
 
@@ -14,7 +13,7 @@ print "Harvest Instance created"
 #temp = h.initlocurls()
 #print "Location urls parsed and created"
 
-for l in loc:
+for l in loc.loc:
   s = models.Locs(loc=l)
   db.session.add(s)
   db.session.commit()
