@@ -41,7 +41,7 @@ class Record(object):
   def pEvalRecord(self, bfs):
     #availability
     a = bsf.availability
-    self.data.update('availability': a['status'])
+    self.data.update('availability', a['status'])
     #licence
     self.data.update('licence': bfs.licence.re)
       #title
