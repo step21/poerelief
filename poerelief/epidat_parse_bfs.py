@@ -43,68 +43,110 @@ class Record(object):
     a = bfs.availability
     self.data.update({'availability': a['status']})
     #licence
-    self.data.update('licence', bfs.licence.re)
+    self.data.update({'licence': bfs.licence.ref})
       #title
-    self.data.update('title', bfs.title.text)
+    try:
+      self.data.update({'title': bfs.title.text})
+    except AttributeError:
+      print "Attribute Error for title"
+    
     #idno/locid
-    self.data.update('locid', bfs.idno.text)
+    
+    try:
+      self.data.update({'locid': bfs.idno.text})
+    except AttributeError:
+      print "Attribute Error for locid"
     #urld
-    temp = bsf.find_all('idno')
-    self.data.update('urld', temp[1].text)
+    temp = bfs.find_all('idno')
+    
+    try:
+      self.data.update({'urld': temp[1].text})
+    except AttributeError:
+      print "Attribute Error for urld"
     #date
-    self.data.update('date', bfs.date.text) #OR bfs.date['notbefore']
+    
+    try:
+      self.data.update({'date': bfs.date.text}) #OR bfs.date['notbefore']
+    except AttributeError:
+      print "Attribute Error for date"
     #insc
-    self.data.update('insc', bfs.support.p) #OR bfs.support
+    self.data.update({'insc': bfs.support.p}) #OR bfs.support
     #material
-    self.data.update('material', bfs.material.text)
+    
+    try:
+      self.data.update({'material': bfs.material.text})
+    except AttributeError:
+      print "Attribute Error for material"
     #condition
-    self.data.update('condition', bfs.condition.text)
+    
+    try:
+      self.data.update({'condition': bfs.condition.text})
+    except AttributeError:
+      print "Attribute Error for condition"
     #Decodescription #Decotype
-    self.data.update('deconote', bfs.deconote)
-    self.data.update('decodesc', bfs.decodesc)
+    self.data.update({'deconote': bfs.deconote})
+    self.data.update({'decodesc': bfs.decodesc})
     #Geoname
-    self.data.update('geoname', bfs.geogname.find(text=True, recursive=False))
+    self.data.update({'geoname': bfs.geogname.find(text=True, recursive=False)})
     #geotype
-    self.data.update('geotype', bfs.settlement.type)
+    self.data.update({'geotype': bfs.settlement.type})
     #return type, name
     #geocountry
-    self.data.update('geocountry', bfs.country.find(text=True, recursive=False)) # wie nur an text, OHNE child tag?
+    self.data.update({'geocountry': bfs.country.find(text=True, recursive=False)}) # wie nur an text, OHNE child tag?
     #georegion
-    self.data.update('georegion', bfs.region.text)
+    try:
+      self.data.update({'georegion': bfs.region.text})
+    except AttributeError:
+      print "AttributeError was raised for region"
+
+
     #geocoord
-    self.data.update('geocoord', bfs.geo)
+    self.data.update({'geocoord': bfs.geo})
     # Graphics
-    self.data.update('graphics', bfs.graphic)
-    self.data.update('graphicsurl', bfs.graphic['url']) #bfs.graphic.ref['foto1']
+    self.data.update({'graphics': bfs.graphic})
+    try:
+      self.data.update({'graphicsurl': bfs.graphic['url']}) #bfs.graphic.ref['foto1']
+    except TypeError:
+      print "TypeError was raised by graphicsurl"
     #das gleiche für foto2, neue tabelle für fotos?
     #FIXME[1] ... check with len or so how many ... url with r.TEI.facsimile.graphic[0]['url'] + add recto verso stuff etc
   ### SEparate table for persons, graphics, to know recto vers etc ... maybe also separate for translation etc? ###
     # add stuff about authors, etc r.TEI.teiHeader.encodingDesc.classDecl.taxonomy.category ff
-    self.data.update('idno', bfs.idno)
+    self.data.update({'idno': bfs.idno})
     #sex
-    self.data.update('sex', bfs.person['sex'])
+    try:
+      self.data.update({'sex': bfs.person['sex']})
+    except TypeError:
+      print "TypeError was raised by sex"
     #FIXME: für mehrere personen
     #person name
-    self.data.update('pname', bfs.person.persname.text)
+    
+    try:
+      self.data.update({'pname': bfs.person.persname.text})
+    except AttributeError:
+      print "Attribute Error for pname"
     #FIXME maybe as list with id if more than one??
     #deathdate
-    self.data.update('deathdate', bfs.event['dateofdeath'])
+    try:
+      self.data.update({'deathdate': bfs.event['dateofdeath']})
+    except TypeError:
+      print "TypeError for deathdate"
     #edition
-    self.data.update('edition', bfs.find_all("div", type="edition"))
+    self.data.update({'edition': bfs.find_all("div", type="edition")})
      #recto
-    self.data.update('recto', bfs.find_all("div", subtype="recto"))
+    self.data.update({'recto': bfs.find_all("div", subtype="recto")})
     #verso
-    self.data.update('verso', bfs.find_all("div", subtype="verso"))
+    self.data.update({'verso': bfs.find_all("div", subtype="verso")})
     #translation
-    self.data.update('translation', bfs.find_all("div", type="translation"))
+    self.data.update({'translation': bfs.find_all("div", type="translation")})
     #linecomm
-    self.data.update('linecomm', bfs.find_all("div", subtype="Zeilenkommentar"))
+    self.data.update({'linecomm': bfs.find_all("div", subtype="Zeilenkommentar")})
     #endcomm
-    self.data.update('endcomm', bff.find_all("div", subtype="Endkommentar"))
+    self.data.update({'endcomm': bfs.find_all("div", subtype="Endkommentar")})
     #proso
-    self.data.update('proso', bfs.find_all("div", subtype="Prosopographie"))
+    self.data.update({'proso': bfs.find_all("div", subtype="Prosopographie")})
     #bibliography
-    self.data.update('bibliography', bfs.find_all("div", type="bibliography"))
+    self.data.update({'bibliography': bfs.find_all("div", type="bibliography")})
     return 0
 
 # format data as json
