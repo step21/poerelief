@@ -35,7 +35,7 @@ class Record(object):
 
   def getRecord(self, url):
     o = urlopen(url)
-    f = BeautifulSoup(bfs)
+    f = BeautifulSoup(o)
     return f
 
   def pEvalRecord(self, bfs):
