@@ -16,11 +16,12 @@ def page():
 
 @app.route('/doc/<int:docid>')
 def epidoc(docid):
+	### use idno for locid
 	#print docid
 	s = models.Epidat.query.get(docid)
 	#print s.id, s.loc, s.translation
 	return str(s.id) + s.loc + s.url + s.translation + s.recto + s.verso + s.title
-	
+
   #return render_template("index.html", pg=s.id + s.loc s.translation)
 
 #implement doc call giving record as json
