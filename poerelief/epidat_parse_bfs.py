@@ -52,7 +52,7 @@ class Record(object):
     temp = bsf.find_all('idno')
     self.urld = temp[1].text
     #date
-    self = bfs.date.text OR bfs.date['notbefore']
+    self = bfs.date.text #OR bfs.date['notbefore']
     #insc
     self = bfs.support.p OR bfs.support
     #material
