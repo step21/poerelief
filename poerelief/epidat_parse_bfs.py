@@ -29,7 +29,7 @@ id = 1
 
 class Record(object):
   def __init__(self):
-    self.data = {'availability': "", 'licence': "", 'title': "",'locid': "",'urld': "",'date': "",'insc': "",'material': "", 'condition': '', 'deconote': '', 'decodesc': '', 'geoname': '', 'geotype': '', 'geocountry': '', 'georegion': '', 'geocoord': '', 'graphics': '', 'graphicsurl': '', 'idno': '', 'sex': '', 'pname': '', 'deathdate': '', 'edition': '', 'verso': '', 'recto': '', 'translation': '', 'linecomm':  '', 'endcomm': '', 'proso': '', 'bibliography',: ''}
+    self.data = {'availability': "", 'licence': "", 'title': "",'locid': "", 'urld': "", 'date': "", 'insc': "", 'material': "", 'condition': '', 'deconote': '', 'decodesc': '', 'geoname': '', 'geotype': '', 'geocountry': '', 'georegion': '', 'geocoord': '', 'graphics': '', 'graphicsurl': '', 'idno': '', 'sex': '', 'pname': '', 'deathdate': '', 'edition': '', 'verso': '', 'recto': '', 'translation': '', 'linecomm':  '', 'endcomm': '', 'proso': '', 'bibliography': ''}
 
 #This gets a record from supplied id + loc
 
