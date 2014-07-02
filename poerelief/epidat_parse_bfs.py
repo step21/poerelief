@@ -54,7 +54,7 @@ class Record(object):
     #date
     self = bfs.date.text #OR bfs.date['notbefore']
     #insc
-    self = bfs.support.p OR bfs.support
+    self = bfs.support.p #OR bfs.support
     #material
     self = bsf.material.text
     #condition
