@@ -4,7 +4,6 @@ from . import db
 
 class Epidat(db.Model):
 
-  #Columns
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   availability = db.Column(db.String(12))
   licence = db.Column(db.Text)
