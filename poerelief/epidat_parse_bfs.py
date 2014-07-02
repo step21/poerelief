@@ -129,7 +129,7 @@ class Record(object):
     #deathdate
     try:
       self.data.update({'deathdate': bfs.event['dateofdeath']})
-    except TypeError:
+    except (TypeError, KeyError):
       print "TypeError for deathdate"
     #edition
     self.data.update({'edition': bfs.find_all("div", type="edition")})
