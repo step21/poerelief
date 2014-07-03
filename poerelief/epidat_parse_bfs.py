@@ -44,36 +44,36 @@ class Record(object):
     a = bfs.availability
     try:
       self.data.update({'availability': a['status']})
-    except TypeError:
-      print "TypeError was raised for availability"
+    except Exception:
+      print "Exception was raised for availability"
     #licence
     try:
       self.data.update({'licence': bfs.licence.ref})
-    except TypeError:
-      "TypeError was raised for licence"
+    except Exception:
+      "Exception was raised for licence"
       #title
     try:
       self.data.update({'title': bfs.title.text})
-    except AttributeError:
-      print "Attribute Error for title"
+    except Exception:
+      print "Exception was raised for title"
     #idno/locid
     try:
       self.data.update({'locid': bfs.idno.text})
-    except AttributeError:
-      print "Attribute Error for locid"
+    except Exception:
+      print "Exception for locid"
     #urld
     temp = bfs.find_all('idno')
     
     try:
       self.data.update({'urld': temp[1].text})
-    except AttributeError:
-      print "Attribute Error for urld"
+    except Exception:
+      print "Exception for urld"
     #date
     
     try:
       self.data.update({'date': bfs.date.text}) #OR bfs.date['notbefore']
-    except AttributeError:
-      print "Attribute Error for date"
+    except Exception:
+      print "Exception for date"
     #insc
     try:
       self.data.update({'insc': bfs.support.p}) #OR bfs.support
@@ -82,22 +82,22 @@ class Record(object):
     #material
     try:
       self.data.update({'material': bfs.material.text})
-    except AttributeError:
-      print "Attribute Error for material"
+    except Exception:
+      print "Exception for material"
     #condition
     try:
       self.data.update({'condition': bfs.condition.text})
-    except AttributeError:
-      print "Attribute Error for condition"
+    except Exception:
+      print "Exception for condition"
     #Decodescription #Decotype
     try:
       self.data.update({'deconote': bfs.deconote})
     except:
-      print "exception for deconote"
+      print "Exception for deconote"
     try:
       self.data.update({'decodesc': bfs.decodesc})
     except Exception:
-      print "exception for decodesc"
+      print "Exception for decodesc"
     #Geoname
     try:
       self.data.update({'geoname': bfs.geogname.find(text=True, recursive=False)})
@@ -116,8 +116,8 @@ class Record(object):
     #georegion
     try:
       self.data.update({'georegion': bfs.region.text})
-    except AttributeError:
-      print "AttributeError was raised for region"
+    except Exception:
+      print "Exception was raised for region"
     #geocoord
     try:
       self.data.update({'geocoord': bfs.geo})
@@ -130,8 +130,8 @@ class Record(object):
       print "Exception raised for graphics"
     try:
       self.data.update({'graphicsurl': bfs.graphic['url']}) #bfs.graphic.ref['foto1']
-    except TypeError:
-      print "TypeError was raised by graphicsurl"
+    except Exception:
+      print "Exception was raised by graphicsurl"
     #das gleiche für foto2, neue tabelle für fotos?
     #FIXME[1] ... check with len or so how many ... url with r.TEI.facsimile.graphic[0]['url'] + add recto verso stuff etc
   ### SEparate table for persons, graphics, to know recto vers etc ... maybe also separate for translation etc? ###
@@ -143,20 +143,20 @@ class Record(object):
     #sex
     try:
       self.data.update({'sex': bfs.person['sex']})
-    except TypeError:
-      print "TypeError was raised by sex"
+    except Exception:
+      print "Exception was raised by sex"
     #FIXME: für mehrere personen
     #person name
     try:
       self.data.update({'pname': bfs.person.persname.text})
-    except AttributeError:
-      print "Attribute Error for pname"
+    except Exception:
+      print "Exception Error for pname"
     #FIXME maybe as list with id if more than one??
     #deathdate
     try:
       self.data.update({'deathdate': bfs.event['dateofdeath']})
-    except (TypeError, KeyError):
-      print "TypeError for deathdate"
+    except Exception:
+      print "Exception for deathdate"
     #edition
     try:
       self.data.update({'edition': bfs.find_all("div", type="edition")})
