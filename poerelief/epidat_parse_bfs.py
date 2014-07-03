@@ -41,8 +41,8 @@ class Record(object):
 
   def pEvalRecord(self, bfs):
     #availability
-    a = bfs.availability
     try:
+      a = bfs.availability
       self.data.update({'availability': a['status']})
     except Exception:
       print "Exception was raised for availability"
