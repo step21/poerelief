@@ -156,5 +156,5 @@ class Record(object):
 # format data as json
 
   def toJSON(self):
-  ret = json.dump(self.data)  
+    ret = json.dump(self.data)  
     return ret
