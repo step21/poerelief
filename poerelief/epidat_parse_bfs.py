@@ -8,6 +8,7 @@ from loc import loc
 from types import *
 from urllib2 import urlopen
 from bs4 import BeautifulSoup
+import json
 #simplejson?
 # Temporär JS code der abfragt  returns one json array  refreshes every so often‘’ or so
 skipped = []
@@ -41,7 +42,10 @@ class Record(object):
   def pEvalRecord(self, bfs):
     #availability
     a = bfs.availability
-    self.data.update({'availability': a['status']})
+    try:
+      self.data.update({'availability': a['status']})
+    except TypeError:
+      print "TypeError was raised for availability"
     #licence
     self.data.update({'licence': bfs.licence.ref})
       #title
@@ -151,7 +155,6 @@ class Record(object):
 
 # format data as json
 
-  def toJSON(self, record):
-    #use lib for that
-    ret = "title:" + self.title + "," "urld:" + self.urld +"," + "date:" + self.date + "," + "pname:" + self.pname + "," + "translation:" + self.translation
+  def toJSON(self):
+  ret = json.dump(self.data)  
     return ret
