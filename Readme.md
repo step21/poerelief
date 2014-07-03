@@ -17,4 +17,4 @@ Next steps:
 - creata json output in flask as tested
 - fix up js to display json as 'slides'
 
-# nonexistant record but is in changes ... (652, u'http://steinheim-institut.de/cgi-bin/epidat?id=bme-9000-teip5'
+nonexistant record but is in changes ... (652, u'http://steinheim-institut.de/cgi-bin/epidat?id=bme-9000-teip5'
