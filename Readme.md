@@ -16,3 +16,5 @@ Next steps:
 - create sql db with relevant data (17-18 Jhd) from xml
 - creata json output in flask as tested
 - fix up js to display json as 'slides'
+
+# nonexistant record but is in changes ... (652, u'http://steinheim-institut.de/cgi-bin/epidat?id=bme-9000-teip5'
