@@ -47,15 +47,16 @@ class Record(object):
     except TypeError:
       print "TypeError was raised for availability"
     #licence
-    self.data.update({'licence': bfs.licence.ref})
+    try:
+      self.data.update({'licence': bfs.licence.ref})
+    except TypeError:
+      "TypeError was raised for licence"
       #title
     try:
       self.data.update({'title': bfs.title.text})
     except AttributeError:
       print "Attribute Error for title"
-    
     #idno/locid
-    
     try:
       self.data.update({'locid': bfs.idno.text})
     except AttributeError:
@@ -74,40 +75,59 @@ class Record(object):
     except AttributeError:
       print "Attribute Error for date"
     #insc
-    self.data.update({'insc': bfs.support.p}) #OR bfs.support
+    try:
+      self.data.update({'insc': bfs.support.p}) #OR bfs.support
+    except Exception:
+      print "Exception for insc"
     #material
-    
     try:
       self.data.update({'material': bfs.material.text})
     except AttributeError:
       print "Attribute Error for material"
     #condition
-    
     try:
       self.data.update({'condition': bfs.condition.text})
     except AttributeError:
       print "Attribute Error for condition"
     #Decodescription #Decotype
-    self.data.update({'deconote': bfs.deconote})
-    self.data.update({'decodesc': bfs.decodesc})
+    try:
+      self.data.update({'deconote': bfs.deconote})
+    except:
+      print "exception for deconote"
+    try:
+      self.data.update({'decodesc': bfs.decodesc})
+    except Exception:
+      print "exception for decodesc"
     #Geoname
-    self.data.update({'geoname': bfs.geogname.find(text=True, recursive=False)})
+    try:
+      self.data.update({'geoname': bfs.geogname.find(text=True, recursive=False)})
+    except Exception:
+      print "Exception for Geoname"
     #geotype
-    self.data.update({'geotype': bfs.settlement.type})
-    #return type, name
+    try:
+      self.data.update({'geotype': bfs.settlement.type})
+    except Exception:
+      print "Exception for geotype"
     #geocountry
-    self.data.update({'geocountry': bfs.country.find(text=True, recursive=False)}) # wie nur an text, OHNE child tag?
+    try:
+      self.data.update({'geocountry': bfs.country.find(text=True, recursive=False)}) # wie nur an text, OHNE child tag?
+    except Exception:
+      print "Exception for geocountry"
     #georegion
     try:
       self.data.update({'georegion': bfs.region.text})
     except AttributeError:
       print "AttributeError was raised for region"
-
-
     #geocoord
-    self.data.update({'geocoord': bfs.geo})
+    try:
+      self.data.update({'geocoord': bfs.geo})
+    except Exception:
+      print "Exception was raised for geocoord"
     # Graphics
-    self.data.update({'graphics': bfs.graphic})
+    try:
+      self.data.update({'graphics': bfs.graphic})
+    except Exception:
+      print "Exception raised for graphics"
     try:
       self.data.update({'graphicsurl': bfs.graphic['url']}) #bfs.graphic.ref['foto1']
     except TypeError:
@@ -116,7 +136,10 @@ class Record(object):
     #FIXME[1] ... check with len or so how many ... url with r.TEI.facsimile.graphic[0]['url'] + add recto verso stuff etc
   ### SEparate table for persons, graphics, to know recto vers etc ... maybe also separate for translation etc? ###
     # add stuff about authors, etc r.TEI.teiHeader.encodingDesc.classDecl.taxonomy.category ff
-    self.data.update({'idno': bfs.idno})
+    try:
+      self.data.update({'idno': bfs.idno})
+    except Exception:
+      print "Exception for idno"
     #sex
     try:
       self.data.update({'sex': bfs.person['sex']})
@@ -124,7 +147,6 @@ class Record(object):
       print "TypeError was raised by sex"
     #FIXME: für mehrere personen
     #person name
-    
     try:
       self.data.update({'pname': bfs.person.persname.text})
     except AttributeError:
@@ -136,21 +158,45 @@ class Record(object):
     except (TypeError, KeyError):
       print "TypeError for deathdate"
     #edition
-    self.data.update({'edition': bfs.find_all("div", type="edition")})
-     #recto
-    self.data.update({'recto': bfs.find_all("div", subtype="recto")})
+    try:
+      self.data.update({'edition': bfs.find_all("div", type="edition")})
+    except Exception:
+      print "Exception for edition"
+    #recto
+    try:
+      self.data.update({'recto': bfs.find_all("div", subtype="recto")})
+    except Exception:
+      print "Exception for recto"
     #verso
-    self.data.update({'verso': bfs.find_all("div", subtype="verso")})
+    try:
+      self.data.update({'verso': bfs.find_all("div", subtype="verso")})
+    except Exception:
+      print "Exception for verso"
     #translation
-    self.data.update({'translation': bfs.find_all("div", type="translation")})
+    try:
+      self.data.update({'translation': bfs.find_all("div", type="translation")})
+    except Exception:
+      print "Exception for translation"
     #linecomm
-    self.data.update({'linecomm': bfs.find_all("div", subtype="Zeilenkommentar")})
+    try:
+      self.data.update({'linecomm': bfs.find_all("div", subtype="Zeilenkommentar")})
+    except Exception:
+      print "Exception for linecomm"
     #endcomm
-    self.data.update({'endcomm': bfs.find_all("div", subtype="Endkommentar")})
+    try:
+      self.data.update({'endcomm': bfs.find_all("div", subtype="Endkommentar")})
+    except Exception:
+      print "Exception for endcomm"
     #proso
-    self.data.update({'proso': bfs.find_all("div", subtype="Prosopographie")})
+    try:
+      self.data.update({'proso': bfs.find_all("div", subtype="Prosopographie")})
+    except Exception:
+      print "Exception for proso"
     #bibliography
-    self.data.update({'bibliography': bfs.find_all("div", type="bibliography")})
+    try:
+      self.data.update({'bibliography': bfs.find_all("div", type="bibliography")})
+    except Exception:
+      print "Exception for bibliography"
     return 0
 
 # format data as json
