@@ -21,6 +21,8 @@ $(document).ready(function() {
 			var translation = S(data.translation).stripTags().trim();
 			$('#translation').text(translation);
 			$('#original').html(data.edition);
+      $('.left').html(data.edition);
+      $('.right').text(translation);
 			/*$('#original').append();*/
 			$('.center-cropped').css('background-image', "url("+data.graphicsurl+")");
 			$('#pname').html(data.pname + " [" + data.date + "]");
