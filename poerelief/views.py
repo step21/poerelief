@@ -41,7 +41,7 @@ def randomdoc():
 #this generates a specific json
 @app.route('/doc/random/<locid>')
 def permajson(locid):
-	if idno:
+	if locid:
 		doc = models.Epidat.query.filter_by(locid=locid).first()
 		data = {'availability': doc.availability, 'licence': doc.licence, 'title': doc.title, 'locid': doc.locid, 'urld': doc.urld, 'date': doc.date, 'insc': doc.insc, 'material': doc.material, 'condition': doc.condition, 'deconote': doc.deconote, 'decodesc': doc.decodesc, 'geoname': doc.geoname, 'geotype': doc.geotype, 'geocountry': doc.geocountry, 'georegion': doc.georegion, 'geocoord': doc.geocoord, 'graphics': doc.graphics, 'graphicsurl': doc.graphicsurl, 'idno': doc.idno, 'sex': doc.sex, 'pname': doc.pname, 'deathdate': doc.deathdate, 'edition': doc.edition, 'verso': doc.verso, 'recto': doc.recto, 'translation': doc.translation, 'linecomm':  doc.linecomm, 'endcomm': doc.endcomm, 'proso': doc.proso, 'bibliography': doc.bibliography}
 	else:
