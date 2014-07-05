@@ -2,8 +2,13 @@
 
 (Poetic Relief is published under AGPL v3, see LICENSE for details)
 
+* Poerelief 0.1.4
+- cleaned up database https://mega.co.nz/#!ss1giCDI!obppI2RnUC36lEl2DOuqck8Oig3o6XUWsYyyurXjuMM (to remove square brackets and records that were missing crucial fields)
+- better url replacement
+- edition instead of recto/verso for better results
+
 * Poerelief 0.1.3
-- improved database dump https://mega.co.nz/#!Es9CWTjR!rrbOdS6DMAdisTrypTrkLoakCIuAMPM2UCCc_ph3pJ8
+- improved database dump
 - basic ajax-y stuff working, esp. for name/date and pictures, text not so much
 
 * Poerelief 0.1.2
