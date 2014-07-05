@@ -51,7 +51,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>{{ sitename }} | {{ sitenameh }}</h1>
+			<h1>{{ sitename }}</h1>
 		</header>
 		<div class="separator"></div>
 		<div class="content">
@@ -59,7 +59,9 @@
 			{% block content %}
 			{% endblock %}
 		</div>
-
+<!--<div class="separator"></div> -->
+{% block footer %}
+{% endblock %}
 	</div><!-- container -->
 
 
