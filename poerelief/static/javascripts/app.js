@@ -27,7 +27,7 @@ $(document).ready(function() {
 			});
 
 		});
-$(document).ready(function() {
+$(document).ready(function( data ) {
 	/* This replaces the url path (in modern browsers) with a permalink - just have to get rid of <idno></idno> tags */
 	/* var idno = S(data.idno).stripTags().s; */
   var stateObj = { foo: "bar" };
