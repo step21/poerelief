@@ -14,7 +14,7 @@ version = "0.0.1"
 @app.route('/index')
 def page():
 	pg = ""
-	return render_template("index.html", pg=pg, sitename=sitenamed, pagetitle=pagetitle, version=version)
+	return render_template("index.html", pg=pg, sitename=sitenamed, pagetitle=pagetitle, version=version, docid='random')
 
 #This also gets a specific dataset ... not sure which is better ...
 @app.route('/doc/<locid>')
@@ -52,10 +52,10 @@ def permajson(locid):
 @app.route('/<locid>')
 def permalink(locid):
 	if locid:
-		ret = locid
+		docid = locid
 	else:
-		ret = "no valid id-loc specified"
-	return render_template("index.html", ret=ret, sitename=sitenamed, pagetitle=pagetitle, version=version)
+		docid = "no valid id-loc specified"
+	return render_template("index.html", docid=docid, sitename=sitenamed, pagetitle=pagetitle, version=version)
 
 @app.route('/about')
 def about():
