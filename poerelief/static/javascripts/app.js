@@ -26,15 +26,16 @@ $(document).ready(function() {
 			/*$('#original').append();*/
 			$('.center-cropped').css('background-image', "url("+data.graphicsurl+")");
 			$('#pname').html(data.pname + " [" + data.date + "]");
+      $(document).ready(function( data ) {
+      /* This replaces the url path (in modern browsers) with a permalink - just have to get rid of <idno></idno> tags */
+      /* var idno = S(data.idno).stripTags().s; */
+      var stateObj = { foo: "bar" };
+      var permalink = "/doc/random/" + data.locid;
+      window.history.replaceState(stateObj , "POE Permalink", permalink);
 			});
 
 		});
-$(document).ready(function( data ) {
-	/* This replaces the url path (in modern browsers) with a permalink - just have to get rid of <idno></idno> tags */
-	/* var idno = S(data.idno).stripTags().s; */
-  var stateObj = { foo: "bar" };
-	var permalink = "/doc/random/" + data.locid;
-	window.history.replaceState(stateObj , "POE Permalink", permalink);
+
 });
 /*
 <div class="center-cropped" 
