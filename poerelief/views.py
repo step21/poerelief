@@ -6,7 +6,7 @@ import json
 import random
 
 sitenamed = "Poetic Relief"
-sitenameh = u"הקלה פיוטית"
+sitenameh = u"תבליט פיוטי"
 pagetitle = "Poetic dev"
 version = "0.0.1"
 
@@ -14,7 +14,7 @@ version = "0.0.1"
 @app.route('/index')
 def page():
 	pg = ""
-	return render_template("index.html", pg=pg, sitename=sitenamed, pagetitle=pagetitle, version=version, docid='random')
+	return render_template("index.html", pg=pg, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version, docid='random')
 
 #This also gets a specific dataset ... not sure which is better ...
 @app.route('/doc/<locid>')
@@ -55,11 +55,11 @@ def permalink(locid):
 		docid = locid
 	else:
 		docid = "no valid id-loc specified"
-	return render_template("index.html", docid=docid, sitename=sitenamed, pagetitle=pagetitle, version=version)
+	return render_template("index.html", docid=docid, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
 
 @app.route('/about')
 def about():
-	return render_template("static.html", sitename=sitenamed, pagetitle=pagetitle, version=version)
+	return render_template("static.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
 
 	"""If you write a Flask view function it’s often very handy to return a 404 error for missing entries. Because this is a very common idiom, Flask-SQLAlchemy provides a helper for this exact purpose. Instead of get() one can use get_or_404() and instead of first() first_or_404(). This will raise 404 errors instead of returning None:
 

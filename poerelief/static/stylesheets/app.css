@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+@import url(destroyfont.css);
+
 html {
   height: 100%;
 }
@@ -10,7 +13,23 @@ body {
 
 header {
   text-align: center;
-  font-family: 'Destroy';
+  font-family: "Destroy",
+               “Alef Hebrewe”,
+               Helvetica,
+               Arial,
+               sans-serif;
+}
+
+h1 div#leftheader {
+  text-align: center;
+  display: inline;
+  /* float: left; */
+}
+
+h1 div#rightheader {
+  text-align: center;
+  display: inline;
+/*  float: right; */
 }
 
 .separator {
@@ -44,6 +63,13 @@ h3 {
 #translation {
   margin-left: 50px;
   display: none;
+  font-family: "Alef Hebrew",
+               “Helvetica Neue”,
+               Helvetica,
+               Arial,
+               sans-serif;
+  font-weight: bold;
+  font-size: 12pt;
 }
 
 #original_and_translation {
@@ -57,10 +83,25 @@ h3 {
 
 #original_and_translation .right{
   float: right;
+  font-family: "Alef Hebrew",
+               “Helvetica Neue”,
+               Helvetica,
+               Arial,
+               sans-serif;
+  font-weight: bold;
+  font-size: 11pt;
 }
 
 .hebrew {
   text-align: right;
+  font-family: "Alef Hebrew",
+               “Helvetica Neue”,
+               Helvetica,
+               Arial,
+               sans-serif;
+  font-weight: bold;
+  font-size: 12pt;
+  color: darkgrey;
 }
 
 .text-navigation {
@@ -72,12 +113,28 @@ h3 {
   margin-left: 20px;
   color: black;
   text-decoration: none;
+  background-color: lightgrey;
+  margin-bottom: 20px;
+  padding: 3px;
+  font-family: "Alef Hebrew",
+               “Helvetica Neue”,
+               Helvetica,
+               Arial,
+               sans-serif;
+  font-weight: bold;
+  font-size: 11pt;
 }
 
 .text-navigation a.active {
   border-bottom-color: red;
   border-bottom-width: 2px;
   border-bottom-style: solid;
+  background-color: black;
+  color: white;
+}
+
+.text-navigation a:hover {
+  background-color: grey;
 }
 
 .clear {
@@ -93,3 +150,9 @@ h3 {
   display: block;
   margin: auto;
 }​
+
+/* Testing ... */
+
+a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+  a:hover, a:focus { color: #000; }
+  p a, p a:visited { line-height: inherit; }
