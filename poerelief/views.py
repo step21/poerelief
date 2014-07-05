@@ -19,7 +19,7 @@ def page():
 #This also gets a specific dataset ... not sure which is better ...
 @app.route('/doc/<locid>')
 def epidoc_json(locid):
-	doc = models.Epidat.query.filter_by(locid='locid').first_or_404()
+	doc = models.Epidat.query.filter_by(locid=locid).first_or_404()
 	data = {'availability': doc.availability, 'licence': doc.licence, 'title': doc.title, 'locid': doc.locid, 'urld': doc.urld, 'date': doc.date, 'insc': doc.insc, 'material': doc.material, 'condition': doc.condition, 'deconote': doc.deconote, 'decodesc': doc.decodesc, 'geoname': doc.geoname, 'geotype': doc.geotype, 'geocountry': doc.geocountry, 'georegion': doc.georegion, 'geocoord': doc.geocoord, 'graphics': doc.graphics, 'graphicsurl': doc.graphicsurl, 'idno': doc.idno, 'sex': doc.sex, 'pname': doc.pname, 'deathdate': doc.deathdate, 'edition': doc.edition, 'verso': doc.verso, 'recto': doc.recto, 'translation': doc.translation, 'linecomm':  doc.linecomm, 'endcomm': doc.endcomm, 'proso': doc.proso, 'bibliography': doc.bibliography}
 
 	return json.dumps(data)
@@ -39,23 +39,27 @@ def randomdoc():
 	return json.dumps(data)
 
 #this generates a specific json
-@app.route('/doc/random/<idno>')
-def permajson(idno):
+@app.route('/doc/random/<locid>')
+def permajson(locid):
 	if idno:
-		doc = models.Epidat.query.filter_by(locid=idno).first()
+		doc = models.Epidat.query.filter_by(locid=locid).first()
 		data = {'availability': doc.availability, 'licence': doc.licence, 'title': doc.title, 'locid': doc.locid, 'urld': doc.urld, 'date': doc.date, 'insc': doc.insc, 'material': doc.material, 'condition': doc.condition, 'deconote': doc.deconote, 'decodesc': doc.decodesc, 'geoname': doc.geoname, 'geotype': doc.geotype, 'geocountry': doc.geocountry, 'georegion': doc.georegion, 'geocoord': doc.geocoord, 'graphics': doc.graphics, 'graphicsurl': doc.graphicsurl, 'idno': doc.idno, 'sex': doc.sex, 'pname': doc.pname, 'deathdate': doc.deathdate, 'edition': doc.edition, 'verso': doc.verso, 'recto': doc.recto, 'translation': doc.translation, 'linecomm':  doc.linecomm, 'endcomm': doc.endcomm, 'proso': doc.proso, 'bibliography': doc.bibliography}
 	else:
 		data = "No valid id-loc specified."
 	return json.dumps(data)
 
 #This get a specific record.
-@app.route('/<idno>')
-def permalink(idno):
-	if idno:
-		ret = idno
+@app.route('/<locid>')
+def permalink(locid):
+	if locid:
+		ret = locid
 	else:
 		ret = "no valid id-loc specified"
 	return render_template("index.html", ret=ret, sitename=sitenamed, pagetitle=pagetitle, version=version)
+
+@app.route('/about')
+def about():
+	return render_template("static.html", sitename=sitenamed, pagetitle=pagetitle, version=version)
 
 	"""If you write a Flask view function it’s often very handy to return a 404 error for missing entries. Because this is a very common idiom, Flask-SQLAlchemy provides a helper for this exact purpose. Instead of get() one can use get_or_404() and instead of first() first_or_404(). This will raise 404 errors instead of returning None:
 

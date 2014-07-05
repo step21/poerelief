@@ -20,19 +20,20 @@ $(document).ready(function() {
 			/* Also, if a a specific record is requested, that should be injected instead of a random one ... though not sure how to pass that through atm. In the template it is {{ret}} but not sure how to inser that into javascript */		  
 			var translation = S(data.translation).stripTags().trim();
 			$('#translation').text(translation);
-			$('#original').html(data.verso + data.recto);
+			$('#original').html(data.edition);
 			/*$('#original').append();*/
 			$('.center-cropped').css('background-image', "url("+data.graphicsurl+")");
 			$('#pname').html(data.pname + " [" + data.date + "]");
 			});
 
 		});
-/*$(document).ready(function() { */
+$(document).ready(function() {
 	/* This replaces the url path (in modern browsers) with a permalink - just have to get rid of <idno></idno> tags */
-	/*var idno = S(data.idno).stripTags().s;
-	var permalink = "/doc/random/" + $.idno.text();
-	window.history.replaceState("": ,"", permalink);
-}); */
+	/* var idno = S(data.idno).stripTags().s; */
+  var stateObj = { foo: "bar" };
+	var permalink = "/doc/random/" + data.locid;
+	window.history.replaceState(stateObj , "POE Permalink", permalink);
+});
 /*
 <div class="center-cropped" 
        style="background-image: url('http://www.steinheim-institut.de/daten/picsdu4/xl/0002_du4_2009.png');">
