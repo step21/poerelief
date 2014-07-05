@@ -1,7 +1,13 @@
 # Readme.md
 
+(Poetic Relief is published under AGPL v3, see LICENSE for details)
+
+* Poerelief 0.1.3
+- improved database dump https://mega.co.nz/#!Es9CWTjR!rrbOdS6DMAdisTrypTrkLoakCIuAMPM2UCCc_ph3pJ8
+- basic ajax-y stuff working, esp. for name/date and pictures, text not so much
+
 * Poerelief 0.1.2
-- first databasedump https://mega.co.nz/#!hk0k1JgD!ZgSU4J29qm_uM0r0jNk_lDNSV66E1ClTBnB30YXn10w
+- first databasedump
 - improved parsing code
 - better structure and basics for ajax-y access
 
