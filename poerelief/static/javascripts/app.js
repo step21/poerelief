@@ -30,7 +30,6 @@ function getDoc(docid) {
 	});
 
 };
-
 /*
 <div class="center-cropped" 
        style="background-image: url('http://www.steinheim-institut.de/daten/picsdu4/xl/0002_du4_2009.png');">
