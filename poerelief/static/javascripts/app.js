@@ -26,7 +26,7 @@ function getDoc(docid) {
 		/*$('#original').append();*/
 		$('.center-cropped').css('background-image', "url("+data.graphicsurl+")");
 		$('#pname').html(data.pname + " [" + data.date + "]");
-    window.history.pushState({}, "Poetic Relief", "/" + data.locid);
+    window.history.pushState({}, "Poetic Relief", "/poerelief/" + data.locid);
 	});
 
 };

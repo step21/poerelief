@@ -41,7 +41,7 @@ h1 div#rightheader {
 }
 
 .container {
-  width: 700px;
+  width: 750px;
   min-height: 100%;
   margin: auto;
   padding: 20px;
@@ -74,11 +74,13 @@ h3 {
 
 #original_and_translation {
   display: none;
-  margin: auto 50px;
+  margin: auto 10px;
 }
 
 #original_and_translation .left{
   float: left;
+  font-weight: bold;
+  font-size: 11pt;
 }
 
 #original_and_translation .right{
