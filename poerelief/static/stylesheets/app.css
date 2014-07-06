@@ -8,7 +8,12 @@ html {
 body {
   background-color: #D4D4D4;
   height: 100%;
-  font-family: Helvetica;
+  text-align: center;
+  font-family: "Destroy",
+               “Alef Hebrewe”,
+               Helvetica,
+               Arial,
+               sans-serif;
 }
 
 header {
@@ -141,6 +146,10 @@ h3 {
 
 .clear {
   clear:both;
+}
+
+.menu-navigation {
+  
 }
 
 .center-cropped {
