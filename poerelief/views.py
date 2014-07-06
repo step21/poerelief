@@ -61,6 +61,10 @@ def permalink(locid):
 def about():
 	return render_template("static.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
 
+@app.route('/faq')
+def faq():
+	return render_template("faq.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
+
 	"""If you write a Flask view function it’s often very handy to return a 404 error for missing entries. Because this is a very common idiom, Flask-SQLAlchemy provides a helper for this exact purpose. Instead of get() one can use get_or_404() and instead of first() first_or_404(). This will raise 404 errors instead of returning None:
 
 	@app.route('/user/<username>')
