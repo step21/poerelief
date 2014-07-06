@@ -57,11 +57,11 @@ def permajson(locid):
 	return json.dumps(data)
 
 #This get a specific record.
-"""@app.route('/<locid>')
+@app.route('/<locid>')
 def permalink(locid):
 	if locid:
 		docid = locid
 	else:
 		docid = "no valid id-loc specified"
 	return render_template("index.html", docid=docid, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
-"""
+
