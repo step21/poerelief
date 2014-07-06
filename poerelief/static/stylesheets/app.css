@@ -163,3 +163,16 @@ h3 {
 a, a:visited { color: #333; text-decoration: underline; outline: 0; }
   a:hover, a:focus { color: #000; }
   p a, p a:visited { line-height: inherit; }
+
+  .faq {
+    font-family: "Destroy",
+               “Alef Hebrewe”,
+               Helvetica,
+               Arial,
+               sans-serif;
+  }
+
+  .faq .title: {
+  font-weight: bold;
+  font-size: 12pt;
+  }

@@ -65,12 +65,3 @@ def permalink(locid):
 		docid = "no valid id-loc specified"
 	return render_template("index.html", docid=docid, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
 """
-
-	"""If you write a Flask view function it’s often very handy to return a 404 error for missing entries. Because this is a very common idiom, Flask-SQLAlchemy provides a helper for this exact purpose. Instead of get() one can use get_or_404() and instead of first() first_or_404(). This will raise 404 errors instead of returning None:
-
-	@app.route('/user/<username>')
-	def show_user(username):
-	    user = User.query.filter_by(username=username).first()
-	    return render_template('show_user.html', user=user)
-
-	"""
