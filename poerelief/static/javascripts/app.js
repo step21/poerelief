@@ -12,7 +12,7 @@ $( document ).ready(function() {
 /* var S = require('string'); */
 function getDoc(docid) {
 
-	$.getJSON('/doc/' + docid, function( data ) {
+	$.getJSON('/poerelief/doc/' + docid, function( data ) {
 		/* Name, date and pictures work quite well, though sometimes I have seen that there is no name and pictures are very different from each other */
 		/* The rest of the text however is a problem ... translation works best  (except it needs whitespace stripped, or something ... I alread strip ab/lb tags that were still in the source date, but it's not enough)
 		 hebrew is more of a problem, as it is not always pure hebrew ... according to Thomas from the institute, recto/verso (as the original is called in the source)
