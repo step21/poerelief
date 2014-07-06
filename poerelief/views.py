@@ -16,6 +16,14 @@ def page():
 	pg = ""
 	return render_template("index.html", pg=pg, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version, docid='random')
 
+@app.route('/about')
+def about():
+	return render_template("static.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
+
+@app.route('/faq')
+def faq():
+	return render_template("faq.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
+
 #This also gets a specific dataset ... not sure which is better ...
 @app.route('/doc/<locid>')
 def epidoc_json(locid):
@@ -49,21 +57,14 @@ def permajson(locid):
 	return json.dumps(data)
 
 #This get a specific record.
-@app.route('/<locid>')
+"""@app.route('/<locid>')
 def permalink(locid):
 	if locid:
 		docid = locid
 	else:
 		docid = "no valid id-loc specified"
 	return render_template("index.html", docid=docid, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
-
-@app.route('/about')
-def about():
-	return render_template("static.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
-
-@app.route('/faq')
-def faq():
-	return render_template("faq.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
+"""
 
 	"""If you write a Flask view function it’s often very handy to return a 404 error for missing entries. Because this is a very common idiom, Flask-SQLAlchemy provides a helper for this exact purpose. Instead of get() one can use get_or_404() and instead of first() first_or_404(). This will raise 404 errors instead of returning None:
 
