@@ -8,9 +8,8 @@ html {
 body {
   background-color: #D4D4D4;
   height: 100%;
-  text-align: center;
-  font-family: "Destroy",
-               “Alef Hebrewe”,
+/*  text-align: center; */
+  font-family: “Alef Hebrewe”,
                Helvetica,
                Arial,
                sans-serif;
@@ -18,8 +17,7 @@ body {
 
 header {
   text-align: center;
-  font-family: "Destroy",
-               “Alef Hebrewe”,
+  font-family: “Alef Hebrewe”,
                Helvetica,
                Arial,
                sans-serif;
@@ -112,11 +110,11 @@ h3 {
   color: darkgrey;
 }
 
-.text-navigation {
+.text-navigation, .menu-navigation {
   margin-right: 50px;
 }
 
-.text-navigation a {
+.text-navigation a, .menu-navigation a {
   float: right;
   margin-left: 20px;
   color: black;
@@ -133,7 +131,7 @@ h3 {
   font-size: 11pt;
 }
 
-.text-navigation a.active {
+.text-navigation a.active, .menu-navigation a.active {
   border-bottom-color: red;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -141,7 +139,7 @@ h3 {
   color: white;
 }
 
-.text-navigation a:hover {
+.text-navigation a:hover, .menu-navigation a:hover {
   background-color: grey;
 }
 
@@ -161,52 +159,23 @@ h3 {
 
 /* Testing ... */
 
-a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+a, a:visited { outline: 0; color: #000; }
   a:hover, a:focus { color: #000; }
-  p a, p a:visited { line-height: inherit; }
+  p a, p a:visited { line-height: inherit; color: #000; }
 
-  .faq {
-    font-family: "Destroy",
-               “Alef Hebrewe”,
-               Helvetica,
-               Arial,
-               sans-serif;
-  }
-
-  .faq .title: {
-  font-weight: bold;
+.faq {
+  font-family: “Alef Hebrewe”,
+             Helvetica,
+             Arial,
+             sans-serif;
   font-size: 12pt;
   }
 
-  .menu-navigation {
-  margin-right: 50px;
+.frage {
+  float: left;
+  font-style: bold;
 }
 
-.menu-navigation a {
+.antwort {
   float: right;
-  margin-left: 20px;
-  color: black;
-  text-decoration: none;
-  background-color: lightgrey;
-  margin-bottom: 20px;
-  padding: 3px;
-  font-family: "Alef Hebrew",
-               “Helvetica Neue”,
-               Helvetica,
-               Arial,
-               sans-serif;
-  font-weight: bold;
-  font-size: 11pt;
-}
-
-.menu-navigation a.active {
-  border-bottom-color: red;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  background-color: black;
-  color: white;
-}
-
-.menu-navigation a:hover {
-  background-color: grey;
 }
