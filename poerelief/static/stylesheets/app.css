@@ -173,9 +173,11 @@ a, a:visited { outline: 0; color: #000; }
 
 .frage {
   float: left;
-  font-style: bold;
+  font-weight: bold !important;
 }
 
 .antwort {
   float: right;
+  text-align: right;
+  margin-left: 100px;
 }
