@@ -24,6 +24,11 @@ def about():
 def faq():
 	return render_template("faq.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
 
+@app.route('/cc')
+def cc():
+	return render_template("cc.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
+
+
 #This also gets a specific dataset ... not sure which is better ...
 @app.route('/doc/<locid>')
 def epidoc_json(locid):
