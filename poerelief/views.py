@@ -14,7 +14,7 @@ version = "0.0.1"
 @app.route('/index')
 def page():
 	pg = ""
-	return render_template("index.html", pg=pg, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version, docid='random')
+	return render_template("index.html", pg=pg, sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version, docid='random', servername=app.config['SERVER_NAME'])
 
 @app.route('/about')
 def about():
@@ -24,7 +24,8 @@ def about():
 def faq():
 	return render_template("faq.html", sitename=sitenamed, sitenameh=sitenameh, pagetitle=pagetitle, version=version)
 
-#This also gets a specific dataset ... not sure which is better ...
+
+#This gives a doc as json. Why is this there in addition to the other one?
 @app.route('/doc/<locid>')
 def epidoc_json(locid):
 	doc = models.Epidat.query.filter_by(locid=locid).first_or_404()
@@ -56,7 +57,7 @@ def permajson(locid):
 		data = "No valid id-loc specified."
 	return json.dumps(data)
 
-#This get a specific record.
+#This get a specific record
 @app.route('/<locid>')
 def permalink(locid):
 	if locid:
