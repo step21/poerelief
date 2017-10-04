@@ -17,7 +17,7 @@ To Install/Run
 - The code is a bit unorganized, but running `python run.py` in the subdirectory poerelief should start the main app
 
 *Poerelief 0.1.4*
-- cleaned up database https://mega.co.nz/#!ss1giCDI!obppI2RnUC36lEl2DOuqck8Oig3o6XUWsYyyurXjuMM (to remove square brackets and records that were missing crucial fields)
+- cleaned up database (to remove square brackets and records that were missing crucial fields)
 - better url replacement
 - edition instead of recto/verso for better results
 
