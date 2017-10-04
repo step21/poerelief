@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 # encoding=utf-8
 import sys
+sys.path.append("../")
+sys.path.append("../../")
 from poerelief import db, models, epidat_parse
 import untangle
 from xml.sax._exceptions import SAXParseException
+
+
 
 for x in sys.argv:
   program_name = sys.argv[0]
