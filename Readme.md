@@ -1,6 +1,15 @@
-# Readme.md
+# Poetic Relief
+<Description> live at www.poeticrelief.org
 
 (Poetic Relief is published under AGPL v3, see LICENSE for details)
+
+## Data
+
+* in the current dataset that is live, many epigraphic documents were dropped, as they did not display well due to hardly any text being present.
+* there is data from 137 cemetery locations (this might be out of date, but was current as of the inception of this project in 2014)
+* these locations were used to compile a dataset of 25.372 epigraphics records based on the data from the Steinheim Institute
+* thse records were then cleaned up as outlined above, which results in 16.171 records in the live dataset
+
 
 Required packages:
 
