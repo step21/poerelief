@@ -12,3 +12,5 @@ untangle==1.1.0
 #either should be fine, adjust as needed
 flipflop
 flup6
+#not supported, needs mongokit-py3 or similar
+#mongokit
