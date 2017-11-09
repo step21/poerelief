@@ -11,3 +11,4 @@ itsdangerous==0.24
 untangle==1.1.0
 wsgiref
 flup
+requests
