@@ -1,12 +1,14 @@
 # encoding=utf-8
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+if sys.version_info[0] < 3:
+  reload(sys)
+  sys.setdefaultencoding('utf-8')
+
+import requests
+from .loc import loc
 #from lxml import etree
 #from io import StringIO, BytesIO
-from loc import loc
 from types import *
-from urllib2 import urlopen
 from bs4 import BeautifulSoup
 import json
 #simplejson?
@@ -27,7 +29,6 @@ id = 1
 # Fixed location for testing
 #loc = "aha"
 
-
 class Record(object):
   def __init__(self):
     self.data = {'availability': "", 'licence': "", 'title': "",'locid': "", 'urld': "", 'date': "", 'insc': "", 'material': "", 'condition': '', 'deconote': '', 'decodesc': '', 'geoname': '', 'geotype': '', 'geocountry': '', 'georegion': '', 'geocoord': '', 'graphics': '', 'graphicsurl': '', 'idno': '', 'sex': '', 'pname': '', 'deathdate': '', 'edition': '', 'verso': '', 'recto': '', 'translation': '', 'linecomm':  '', 'endcomm': '', 'proso': '', 'bibliography': ''}
@@ -35,7 +36,7 @@ class Record(object):
 #This gets a record from supplied id + loc
 
   def getRecord(self, url):
-    o = urlopen(url)
+    o = requests.get(url)
     f = BeautifulSoup(o)
     return f
 
@@ -45,93 +46,93 @@ class Record(object):
       a = bfs.availability
       self.data.update({'availability': a['status']})
     except Exception:
-      print "Exception was raised for availability"
+      print("Exception was raised for availability")
     #licence
     try:
       self.data.update({'licence': bfs.licence.ref})
     except Exception:
-      "Exception was raised for licence"
+      print("Exception was raised for licence")
       #title
     try:
       self.data.update({'title': bfs.title.text})
     except Exception:
-      print "Exception was raised for title"
+      print("Exception was raised for title")
     #idno/locid
     try:
       self.data.update({'locid': bfs.idno.text})
     except Exception:
-      print "Exception for locid"
+      print("Exception for locid")
     #urld
     temp = bfs.find_all('idno')
     
     try:
       self.data.update({'urld': temp[1].text})
     except Exception:
-      print "Exception for urld"
+      print("Exception for urld")
     #date
     
     try:
       self.data.update({'date': bfs.date.text}) #OR bfs.date['notbefore']
     except Exception:
-      print "Exception for date"
+      print("Exception for date")
     #insc
     try:
       self.data.update({'insc': bfs.support.p}) #OR bfs.support
     except Exception:
-      print "Exception for insc"
+      print("Exception for insc")
     #material
     try:
       self.data.update({'material': bfs.material.text})
     except Exception:
-      print "Exception for material"
+      print("Exception for material")
     #condition
     try:
       self.data.update({'condition': bfs.condition.text})
     except Exception:
-      print "Exception for condition"
+      print("Exception for condition")
     #Decodescription #Decotype
     try:
       self.data.update({'deconote': bfs.deconote})
     except:
-      print "Exception for deconote"
+      print("Exception for deconote")
     try:
       self.data.update({'decodesc': bfs.decodesc})
     except Exception:
-      print "Exception for decodesc"
+      print("Exception for decodesc")
     #Geoname
     try:
       self.data.update({'geoname': bfs.geogname.find(text=True, recursive=False)})
     except Exception:
-      print "Exception for Geoname"
+      print("Exception for Geoname")
     #geotype
     try:
       self.data.update({'geotype': bfs.settlement.type})
     except Exception:
-      print "Exception for geotype"
+      print("Exception for geotype")
     #geocountry
     try:
       self.data.update({'geocountry': bfs.country.find(text=True, recursive=False)}) # wie nur an text, OHNE child tag?
     except Exception:
-      print "Exception for geocountry"
+      print("Exception for geocountry")
     #georegion
     try:
       self.data.update({'georegion': bfs.region.text})
     except Exception:
-      print "Exception was raised for region"
+      print("Exception was raised for region")
     #geocoord
     try:
       self.data.update({'geocoord': bfs.geo})
     except Exception:
-      print "Exception was raised for geocoord"
+      print("Exception was raised for geocoord")
     # Graphics
     try:
       self.data.update({'graphics': bfs.graphic})
     except Exception:
-      print "Exception raised for graphics"
+      print("Exception raised for graphics")
     try:
       self.data.update({'graphicsurl': bfs.graphic['url']}) #bfs.graphic.ref['foto1']
     except Exception:
-      print "Exception was raised by graphicsurl"
+      print("Exception was raised by graphicsurl")
     #das gleiche für foto2, neue tabelle für fotos?
     #FIXME[1] ... check with len or so how many ... url with r.TEI.facsimile.graphic[0]['url'] + add recto verso stuff etc
   ### SEparate table for persons, graphics, to know recto vers etc ... maybe also separate for translation etc? ###
@@ -139,64 +140,64 @@ class Record(object):
     try:
       self.data.update({'idno': bfs.idno})
     except Exception:
-      print "Exception for idno"
+      print("Exception for idno")
     #sex
     try:
       self.data.update({'sex': bfs.person['sex']})
     except Exception:
-      print "Exception was raised by sex"
+      print("Exception was raised by sex")
     #FIXME: für mehrere personen
     #person name
     try:
       self.data.update({'pname': bfs.person.persname.text})
     except Exception:
-      print "Exception Error for pname"
+      print("Exception Error for pname")
     #FIXME maybe as list with id if more than one??
     #deathdate
     try:
       self.data.update({'deathdate': bfs.event['dateofdeath']})
     except Exception:
-      print "Exception for deathdate"
+      print("Exception for deathdate")
     #edition
     try:
       self.data.update({'edition': bfs.find_all("div", type="edition")})
     except Exception:
-      print "Exception for edition"
+      print("Exception for edition")
     #recto
     try:
       self.data.update({'recto': bfs.find_all("div", subtype="recto")})
     except Exception:
-      print "Exception for recto"
+      print("Exception for recto")
     #verso
     try:
       self.data.update({'verso': bfs.find_all("div", subtype="verso")})
     except Exception:
-      print "Exception for verso"
+      print("Exception for verso")
     #translation
     try:
       self.data.update({'translation': bfs.find_all("div", type="translation")})
     except Exception:
-      print "Exception for translation"
+      print("Exception for translation")
     #linecomm
     try:
       self.data.update({'linecomm': bfs.find_all("div", subtype="Zeilenkommentar")})
     except Exception:
-      print "Exception for linecomm"
+      print("Exception for linecomm")
     #endcomm
     try:
       self.data.update({'endcomm': bfs.find_all("div", subtype="Endkommentar")})
     except Exception:
-      print "Exception for endcomm"
+      print("Exception for endcomm")
     #proso
     try:
       self.data.update({'proso': bfs.find_all("div", subtype="Prosopographie")})
     except Exception:
-      print "Exception for proso"
+      print("Exception for proso")
     #bibliography
     try:
       self.data.update({'bibliography': bfs.find_all("div", type="bibliography")})
     except Exception:
-      print "Exception for bibliography"
+      print("Exception for bibliography")
     return 0
 
 # format data as json
