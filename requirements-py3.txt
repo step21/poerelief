@@ -1,0 +1,16 @@
+Flask==0.12.2
+Flask-SQLAlchemy==2.2
+Flask-PyMongo
+pymongo==2.8
+Jinja2==2.7.3
+MarkupSafe==0.23
+SQLAlchemy==1.1.14
+Werkzeug==0.9.6
+beautifulsoup4==4.4
+itsdangerous==0.24
+untangle==1.1.0
+#either should be fine, adjust as needed
+flipflop
+flup6
+#not supported, needs mongokit-py3 or similar
+#mongokit
