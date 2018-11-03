@@ -39,12 +39,6 @@ def epidoc_json(locid):
 
 	return json.dumps(data)
 
-  #return render_template("index.html", pg=s.id + s.loc s.translation)
-
-#implement doc call giving record as json
-
-#javascript to switch texts
-
 #this gets a random dataset
 @app.route('/doc/random')
 def randomdoc():
