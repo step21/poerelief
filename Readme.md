@@ -17,6 +17,14 @@ Required packages:
 
 To Install/Run
 
+With Docker
+
+- since recently, a docker file is available, which can be used to easily build and run the this app if you have docker installed
+- for this, build the image with `docker build -t poerelief .` in the directory of the repository. This build an image based on debian stretch, sets everything up with python3, apache2 and mod_wsgi which serves the python. Finally, it downloads the sqlite database to have local data access. (otherwise only the default image is displayed.)
+- Then run `docker run -p 80:80 --rm poerelief-dmod`
+
+Without Docker / The normal way
+
 - git clone or download the repository
 - `cd` into cloned directory
 - virtualenv poe (to create a new evironment)
