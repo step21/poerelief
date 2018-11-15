@@ -1,0 +1,6 @@
+#from parse_bfs
+#return render_template("index.html", pg=s.id + s.loc s.translation)
+
+#implement doc call giving record as json
+
+#javascript to switch texts
