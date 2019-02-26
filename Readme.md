@@ -1,23 +1,41 @@
-# Readme.md
+# Poetic Relief
+<Description> live at www.poeticrelief.org
 
 (Poetic Relief is published under AGPL v3, see LICENSE for details)
 
+## Data
+
+* in the current dataset that is live, many epigraphic documents were dropped, as they did not display well due to hardly any text being present.
+* there is data from 137 cemetery locations (this might be out of date, but was current as of the inception of this project in 2014)
+* these locations were used to compile a dataset of 25.372 epigraphics records based on the data from the Steinheim Institute
+* thse records were then cleaned up as outlined above, which results in 16.171 records in the live dataset
+
+
 Required packages:
 
-- Python 2 (not yet compatible with Python 3)
+ - see requirements{2/3}.txt
 
 To Install/Run
+
+With Docker
+
+- since recently, a docker file is available, which can be used to easily build and run the this app if you have docker installed
+- for this, build the image with `docker build -t poerelief .` in the directory of the repository. This build an image based on debian stretch, sets everything up with python3, apache2 and mod_wsgi which serves the python. Finally, it downloads the sqlite database to have local data access. (otherwise only the default image is displayed.)
+- Then run `docker run -p 80:80 --rm poerelief-dmod`
+
+Without Docker / The normal way
 
 - git clone or download the repository
 - `cd` into cloned directory
 - virtualenv poe (to create a new evironment)
 - source poe/bin/activate to activate the new environment
 - `pip install -r requirements.txt` to install the necessary python packages
-- Download the databased (cleaned up) as used in production, and put it into the subdirectory poerelief
+- Download the database (cleaned up) as used in production, and put it into the subdirectory poerelief (https://chaostal.de/~step21/teidb_dev.sqlite)
 - The code is a bit unorganized, but running `python run.py` in the subdirectory poerelief should start the main app
+- To enable proper links even for development, the dev app has to be accessed on localhost instead of 127.0.0.1 (this is set in config.py, but afaik it is not possible to set it to an IP)
 
 *Poerelief 0.1.4*
-- cleaned up database https://mega.co.nz/#!ss1giCDI!obppI2RnUC36lEl2DOuqck8Oig3o6XUWsYyyurXjuMM (to remove square brackets and records that were missing crucial fields)
+- cleaned up database (to remove square brackets and records that were missing crucial fields)
 - better url replacement
 - edition instead of recto/verso for better results
 

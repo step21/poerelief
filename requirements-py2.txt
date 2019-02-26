@@ -9,8 +9,6 @@ Werkzeug==0.9.6
 beautifulsoup4==4.4
 itsdangerous==0.24
 untangle==1.1.0
+wsgiref
+flup
 requests
-#either should be fine, adjust as needed
-flipflop
-flup6
-
