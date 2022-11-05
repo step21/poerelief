@@ -8,7 +8,7 @@ SQLAlchemy==1.3.0
 Werkzeug==0.15.3
 beautifulsoup4==4.4
 itsdangerous==0.24
-untangle==1.1.0
+untangle==1.2.1
 requests
 #either should be fine, adjust as needed
 flipflop
